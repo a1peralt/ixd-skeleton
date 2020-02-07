@@ -38,7 +38,7 @@ if ('development' == app.get('env')) {
 
 //app.get('/', index.view);
 app.get('/', nurture.view);
-app.get('/', nurture2.view);
+app.get('/nurture2', nurture2.view);
 
 // Example route
 // app.get('/users', user.list);
