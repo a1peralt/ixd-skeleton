@@ -9,6 +9,12 @@
 
 }
 
+.panel{
+	border: 1px solid red;
+	width:75%;
+	height:inherit;
+}
+
 #banner{
 	width: 250px;
 	line-height: 70px;

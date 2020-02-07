@@ -11,6 +11,8 @@ var handlebars = require('express3-handlebars')
 //var index = require('./routes/index');
 var nurture = require('./routes/nurture');
 var nurture2 =  require('./routes/nurture2');
+
+var nurtureHam = require('./routes/nurtureHam');
 // Example route
 // var user = require('./routes/user');
 
@@ -39,6 +41,7 @@ if ('development' == app.get('env')) {
 //app.get('/', index.view);
 app.get('/', nurture.view);
 app.get('/nurture2', nurture2.view);
+app.get('/nurtureHam',nurtureHam.view);
 
 // Example route
 // app.get('/users', user.list);
