@@ -49,6 +49,7 @@
 	text-align: left;
 	left:15px;
 	top:80px;
+	font-family: Helvetica;
 }
 
 #hamburger{
@@ -85,7 +86,7 @@
 	vertical-align: top;
 	text-align: center;
 	color:white;
-	font-family: monospace;
+	font-family: Helvetica;
 	font-size: 20px;
 }
 
@@ -124,6 +125,7 @@
 	border-radius: 100%;
 	background-color: white;
 	filter: opacity(0.8);
+	font-family: Helvetica;
 }
 
 #timer-btn-active{
@@ -159,4 +161,19 @@
 
 	width:200px;
 	height:200px;
+}
+
+.settingsName{
+
+	padding-top: 80px;
+	padding-left: 20px;
+	font-size: 55px;
+}
+
+a{
+	color:white;
+}
+a:hover{
+	text-decoration: none;
+	color: gray;
 }
