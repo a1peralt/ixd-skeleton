@@ -13,6 +13,8 @@ var nurture = require('./routes/nurture');
 var nurture2 =  require('./routes/nurture2');
 
 var nurtureHam = require('./routes/nurtureHam');
+var nurture2Ham = require('./routes/nurture2Ham');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -42,6 +44,7 @@ if ('development' == app.get('env')) {
 app.get('/', nurture.view);
 app.get('/nurture2', nurture2.view);
 app.get('/nurtureHam',nurtureHam.view);
+app.get('/nurture2Ham', nurture2Ham.view);
 
 // Example route
 // app.get('/users', user.list);
