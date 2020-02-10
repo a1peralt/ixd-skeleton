@@ -1,0 +1,22 @@
+{
+    "plants" : [
+         {
+            "name" : "tomato plant",
+            "image" : /*todo*/,
+            "date" : "1/2/2020",
+            "time" : "35 min" 
+        },
+        {
+            "name" : "sunflower",
+            "image" : /*todo*/,
+            "date" : "1/5/2020",
+            "time" : "50 min"
+        },
+        {
+            "name" : "pine tree",
+            "image" : /*todo*/,
+            "date" : "1/25/2020",
+            "time" : "20 min"
+        }
+    ]
+}
