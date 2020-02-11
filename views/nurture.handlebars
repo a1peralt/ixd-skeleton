@@ -19,10 +19,34 @@
 	<div class="screen">
 
 		<div id= "hamburger">
-			<a href="/nurtureHam">
+			<!--
+			<a href="/nurtureHam">-->
 			<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger.png" height=50px width=50px>
-			</a>
+			
+				
+				<ul id ="hamWords" style="list-style:none; line-height:120px;">
+					<li><a href="/settings/Profile">Profile</a></li>
+					<li><a href="/mygarden">My Garden </a></li> 
+					<li><a href="/settings/Help">Help</a></li>
+					<li><a href="/settings/Logout">Logout</a></li>
+				</ul>
+				
+			
 		</div>
+
+			<!--toggle the hamburger-->
+			<script>
+				$(document).ready(function() {
+					$("#hamWords").hide();
+				});
+				
+
+				$("#hamburger").click(function() {
+					console.log("test!!!");
+					$("#hamWords").toggle("slow");
+
+				});
+			</script>
 
 		<div id="banner">
 			Set how long you'd like to nurture!
@@ -34,7 +58,7 @@
 		<div id="timer-btn">
 		</div>
 
-		<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hands.png" class="hands-img" />
+		<img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/hand-sprout-color.png?raw=true" class="hands-img" />
 
 		<!--
 		<svg height=relative width=relative>
@@ -50,8 +74,9 @@
 				<br>
 
 				<a href="/nurture2">
-				<button id="nurture-btn">
-					Nurture &hearts;
+				<button id="nurture-btn" style= "text-align: left;">
+					Nurture <img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true" class="heart-img" />
+				
 				</button>
 				</a>
 			</div>

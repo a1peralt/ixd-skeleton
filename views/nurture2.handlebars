@@ -18,11 +18,31 @@
 	<div class="screen">
 
 		<div id= "hamburger">
-			<a href="/nurture2Ham">
 			<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger.png" height=50px width=50px>
-			</a>
+			
+				
+				<ul id ="hamWords" style="list-style:none; line-height:120px;">
+					<li><a href="/settings/Profile">Profile</a></li>
+					<li><a href="/mygarden">My Garden </a></li> 
+					<li><a href="/settings/Help">Help</a></li>
+					<li><a href="/settings/Logout">Logout</a></li>
+				</ul>
+				
+			
 		</div>
 
+			<!--toggle the hamburger-->
+			<script>
+				$(document).ready(function() {
+					$("#hamWords").hide();
+				});
+
+				$("#hamburger").click(function() {
+					console.log("test!!!");
+					$("#hamWords").toggle("slow");
+
+				});
+			</script>
 
 		<div id="timer">
 		</div>
@@ -46,8 +66,8 @@
 				<br>
 
 				<a href="/">
-				<button id="nurture-btn">
-					Abandon &#9760;
+				<button id="nurture-btn" style= "text-align:left;">
+					Abandon <img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true" class="broken-heart" />   
 				</button>
 				</a>
 			</div>

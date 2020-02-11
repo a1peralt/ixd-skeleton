@@ -1,11 +1,15 @@
 <!--garden page-->
 <html>
 <head>
+    <style>
+        
+    </style>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<title>My Garden</title>
 
-    <!--liinking js and css-->
+    <!--linking js and css-->
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/Nurture.css" rel="stylesheet">
@@ -19,14 +23,70 @@
 </head>
 <body>
 
-    <!--adding margins - wait do we want this-->
-	<div class="container">
+    <div class="screen">
 
-        <h4>My Garden</h4>
+		<div id= "hamburger">
+			<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger.png" height=50px width=50px>
+			
+				
+				<ul id ="hamWords" style="list-style:none; line-height:120px;">
+					<li><a href="/settings/Profile">Profile</a></li>
+					<li><a href="/mygarden">My Garden </a></li> 
+					<li><a href="/settings/Help">Help</a></li>
+					<li><a href="/settings/Logout">Logout</a></li>
+				</ul>
+				
+			
+		</div>
 
-		
+			<!--toggle the hamburger-->
+			<script>
+				$(document).ready(function() {
+					$("#hamWords").hide();
+				});
 
-	</div>
+				$("#hamburger").click(function() {
+					console.log("test!!!");
+					$("#hamWords").toggle("slow");
+
+				});
+			</script>
+
+        <!--adding margins - wait do we want this-->
+        <div class="container">
+
+                <div id="MyGardenTitle">
+                    My Garden
+                </div>
+            <!--circle with total in it-->
+                <div id="total" style = "text-align: center;">
+                    3
+                </div>
+
+                <div id="History">
+                    <!--loop through the dataset-->
+                    {{#each plants}}
+                        <div class="plants">
+                            <div>
+                            <img src = {{image}} style= "float: right;" class="img-responsive" >
+                        
+                                <p>
+                                    {{name}}
+                                    {{date}}         
+                                    {{time}}
+                                   
+                                </p>
+                                
+
+                            </div>
+                            </div>
+                    
+                    {{/each}}
+                
+
+        </div>
+
+    </div>
 
 </body>
 </html>
