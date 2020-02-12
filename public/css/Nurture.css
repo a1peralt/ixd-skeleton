@@ -78,6 +78,19 @@
 	width:50px;
 }
 
+#cross{
+	/*Positioning*/
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index: 2;
+
+	/*Size*/
+	height:50px;
+	width:50px;
+	
+}
+
 .ground{
 	/*Line Formatting*/
 	position: absolute;
