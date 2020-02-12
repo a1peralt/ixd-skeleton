@@ -10,7 +10,13 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/js/jQueryUI.js"></script>
+
 	<script src="/js/functionality.js"></script>
+
+	<!-- Import Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -68,7 +74,12 @@
 		<div id="timer">
 		</div>
 
-		<div id="timer-btn">
+		<div id="timer-btn" class="ui-draggable ui-draggable-handle">
+			<svg width=100% height=100%>
+				<circle cx=75 cy=20 r=20 fill=white />
+			</svg>
+			<div id="min-indicator">
+			</div>
 		</div>
 
 		<img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/hand-sprout-color.png?raw=true" class="hands-img" />
@@ -86,12 +97,10 @@
 
 				<br>
 
-				<a href="/nurture2">
-				<button id="nurture-btn" style= "text-align: left;">
+				<button id="nurture-btn" style= "text-align: center;">
 					Nurture <img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true" class="heart-img" />
 				
 				</button>
-				</a>
 			</div>
 
 		</div>
