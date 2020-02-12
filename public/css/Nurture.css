@@ -1,14 +1,12 @@
 .screen{
 	/*Screen Formatting*/
 	position:relative;
-	margin: 0;
-	
+	margin: auto;
 	border: 1px solid black;
 	width: 375px;
 	height: 812px;
-	background: blue;
-	background-color: #6adffc;
-
+	background-color: #dcdee0;
+	font-family: Helvetica;
 }
 
 .panel{
@@ -37,21 +35,8 @@
 	/*Text info*/
 	text-align: right;
 	font-size: 45px;
-	font-family: Helvetica;
 	color: white;
 
-}
-
-#MyGardenTitle{
-	width: 250px;
-	line-height: 70px;
-	position: absolute;
-	font-size: 50px;
-	vertical-align: middle;
-	text-align: center;
-	left:60px;
-	top:80px;
-	font-family: Helvetica;
 }
 
 #banner{
@@ -82,7 +67,7 @@
 	/*Line Formatting*/
 	position: absolute;
 	bottom: 0px;
-	background-color:#bb6330;
+	background-color:#999999;
 	width:inherit;
 	height:180px;
 }
@@ -91,7 +76,7 @@
 	/*Box Formatting*/
 	position: absolute;
 	bottom: 0px;
-	background-color:#00cc00;
+	background-color:#d7d7d7;
 	width:inherit;
 	height:150px;
 
@@ -100,7 +85,6 @@
 	vertical-align: top;
 	text-align: center;
 	color:white;
-	font-family: Helvetica;
 	font-size: 20px;
 }
 
@@ -124,40 +108,43 @@
 	width:30px;
 	height: 500px;
 
-	background-image: linear-gradient(180deg,rgb(245, 187, 100), rgb(252, 238, 118));
+	background-image: linear-gradient(180deg,black, gray);
 	border-radius: 20px;
 }
 
 #timer-btn{
 	/*Positioning*/
 	position: absolute;
-	left:313px;
+	left:260px;
 	top:505px;
-	width:44px;
+	width:100px;
 	height:44px;
 
-	border-radius: 100%;
-	background-color: white;
-	filter: opacity(0.8);
-	font-family: Helvetica;
 }
 
-#total{
+#min-indicator{
 	/*Positioning*/
+	visibility: hidden;
 	position: absolute;
-	left:140px;
-	top:170px;
-	width:80px;
-	height:80px;
+	left:0;
+	top:0;
+	/*background-color: royalblue;*/
+	overflow: hidden;
 
-	border-radius: 100%;
-	background-color: rgb(231, 241, 250);
-	filter: opacity(0.8);
-	font-family: Helvetica;
+	/*Background*/
+	width:50px;
+	height:40px;
 
-	font-size: 50px;
+	/*Font*/
+	font-size:18px;
+	color:white;
 	vertical-align: middle;
-	text-align: left;
+}
+
+.tear-img{
+	visibility: inherit;
+	height:10px;
+	width:10px;
 }
 
 #timer-btn-active{
@@ -208,55 +195,4 @@ a{
 a:hover{
 	text-decoration: none;
 	color: gray;
-}
-
-.heart-img{
-	/*Positioning*/
-	position: absolute;
-	left:250px;
-	top:50px;
-
-	width:50px;
-	height:50px;
-}
-
-.broken-heart{
-	/*Positioning*/
-	position: absolute;
-	left:250px;
-	top:50px;
-
-	width:50px;
-	height:50px;	
-}
-
-.plants{
-	width: 80px;
-	height:80px;
-	left: 50 px;
-	margin-bottom: 90px;
-}
-
-#History{
-	/*Positioning*/
-	position: absolute;
-	left:30px;
-	top:290px;
-}
-
-.summary{
-	position: absolute;
-	
-}
-
-#bkgplant{
-	position: absolute;
-	left:30px;
-	top:290px;	
-	width:80px;
-	height:80px;
-
-	border-radius: 100%;
-	background-color: rgb(231, 241, 250);
-	filter: opacity(0.8);
 }
