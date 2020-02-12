@@ -1,7 +1,7 @@
 .screen{
 	/*Screen Formatting*/
 	position:relative;
-	margin: 0;
+	margin: auto;
 	
 	border: 1px solid black;
 	width: 375px;
