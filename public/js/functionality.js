@@ -93,7 +93,7 @@ function initializePage() {
 
 
   	//Default Timer Setting (No time set by user)
-	$('#nurture-btn').click( function(e){
+	   $('#nurture-btn').click( function(e){
 
 		//Start timer if it hasn't been started
 		if(timerOn == false){
@@ -113,7 +113,7 @@ function initializePage() {
 			}
 
 			//Change words on button
-			$('#nurture-btn').html("Abandon &#9760;");
+			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
 
 			timerOn = true;
 		}
@@ -123,7 +123,7 @@ function initializePage() {
 			//Console check
 			console.log("Timer ended");
 			//Change words on button
-			$('#nurture-btn').html("Nurture &hearts;")
+			$('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 
 			timerOn = false;
 		}
