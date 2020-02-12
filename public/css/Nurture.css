@@ -8,6 +8,7 @@
 	height: 812px;
 	background: blue;
 	background-color: #6adffc;
+	font-family: 'Fredoka One', cursive;
 
 }
 
@@ -37,7 +38,6 @@
 	/*Text info*/
 	text-align: right;
 	font-size: 45px;
-	font-family: Helvetica;
 	color: white;
 
 }
@@ -51,7 +51,6 @@
 	text-align: center;
 	left:60px;
 	top:80px;
-	font-family: Helvetica;
 }
 
 #banner{
@@ -63,7 +62,6 @@
 	text-align: left;
 	left:15px;
 	top:80px;
-	font-family: Helvetica;
 }
 
 #hamburger{
@@ -100,7 +98,6 @@
 	vertical-align: top;
 	text-align: center;
 	color:white;
-	font-family: Helvetica;
 	font-size: 20px;
 }
 
@@ -131,15 +128,30 @@
 #timer-btn{
 	/*Positioning*/
 	position: absolute;
-	left:313px;
+	left:260px;
 	top:505px;
-	width:44px;
+	width:100px;
 	height:44px;
 
-	border-radius: 100%;
-	background-color: white;
-	filter: opacity(0.8);
-	font-family: Helvetica;
+}
+
+#min-indicator{
+	/*Positioning*/
+	visibility: hidden;
+	position: absolute;
+	left:0;
+	top:0;
+	/*background-color: royalblue;*/
+	overflow: hidden;
+
+	/*Background*/
+	width:50px;
+	height:40px;
+
+	/*Font*/
+	font-size:18px;
+	color:white;
+	vertical-align: middle;
 }
 
 #total{
@@ -153,7 +165,6 @@
 	border-radius: 100%;
 	background-color: rgb(231, 241, 250);
 	filter: opacity(0.8);
-	font-family: Helvetica;
 
 	font-size: 50px;
 	vertical-align: middle;
