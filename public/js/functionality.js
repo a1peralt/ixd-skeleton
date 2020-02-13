@@ -97,6 +97,9 @@ function initializePage() {
 
 		//Start timer
 		if(timerOn == false){
+
+      //Update text
+      $('#banner').css('fontSize','60px');
 			
 			//Start timer with default time
 			if(userTime == null){
@@ -187,4 +190,11 @@ function startTimer(duration, display) {
     // we don't want to wait a full second before the timer starts
     timer();
     time = setInterval(timer, 1000);
+}
+
+function manualUserInput(){
+  var str = document.getElementById("userInput").value;
+  userTime = str
+  startTimer(userTime, $('#banner'));
+  $("#userInputScreen").toggle("medium");
 }
