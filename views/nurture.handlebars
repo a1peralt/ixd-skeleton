@@ -34,7 +34,12 @@
 						<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/x.png" height=50px width=50px>
 				</ul>
 				
+				<ul class = "panel">
+
+				</ul>
+
 				<ul id ="hamWords" style="list-style:none; line-height:120px;">
+					<li><a href="/">Home</a></li>
 					<li><a href="/settings/Profile">Profile</a></li>
 					<li><a href="/mygarden">My Garden </a></li> 
 					<li><a href="/settings/Help">Help</a></li>
@@ -50,6 +55,7 @@
 				$(document).ready(function() {
 					$("#hamWords").hide();
 					$("#cross").hide();
+					$(".panel").hide();
 				});
 				
 
@@ -58,12 +64,14 @@
 					$("#hamWords").toggle("slow");
 					$("#hamburger").hide();
 					$("#cross").show();
+					$(".panel").toggle("slow");
 				});
 
 				$("#cross").click(function(){
 					$("#hamWords").toggle("slow");
 					$("#cross").hide()
 					$("#hamburger").show()
+					$(".panel").toggle("slow");
 				})
 			</script>
 
