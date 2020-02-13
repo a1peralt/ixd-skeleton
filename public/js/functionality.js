@@ -95,7 +95,7 @@ function initializePage() {
   	//Default Timer Setting (No time set by user)
 	   $('#nurture-btn').click( function(e){
 
-		//Start timer if it hasn't been started
+		//Start timer
 		if(timerOn == false){
 			
 			//Start timer with default time
@@ -118,6 +118,7 @@ function initializePage() {
 			timerOn = true;
 		}
 
+    //Stop Timer
 		else{
 			clearInterval(time);
 			//Console check
@@ -162,6 +163,20 @@ function startTimer(duration, display) {
             // add one second so that the count down starts at the full duration
             // example 05:00 not 04:59
             start = Date.now() + 1000;
+        }
+
+        //Timer End behavior
+        if(minutes == 0 && seconds == 0){
+
+          //Stop Timer
+          clearInterval(time);
+
+          //Set Banner Text
+          $('#banner').html('Time is up!');
+
+          //Reset Button functionality
+          $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
+          timerOn = false;
         }
     };
 
