@@ -19,7 +19,7 @@
 	width:75%;
 	height:inherit;
 	display: block;
-
+ls
 	/*Color*/
 	background-color: black;
 	filter: opacity(0.8);
@@ -76,6 +76,19 @@
 	/*Size*/
 	height:50px;
 	width:50px;
+}
+
+#cross{
+	/*Positioning*/
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index: 2;
+
+	/*Size*/
+	height:50px;
+	width:50px;
+	
 }
 
 .ground{
@@ -271,3 +284,22 @@ a:hover{
 	background-color: rgb(231, 241, 250);
 	filter: opacity(0.8);
 }
+
+#hourglass-btn{
+	background-image:url("https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hourglass.png");
+	background-size:cover;
+
+	/*Positioning*/
+	position:absolute;
+	left:308.5px;
+	top: 565.5px;
+	z-index: 2;
+
+	/*Appearance*/
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	border-radius: 100%;
+}
+
+
