@@ -114,6 +114,10 @@ function initializePage() {
 
 			//Change words on button
 			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
+			//show the planted plant image
+			$('.planted').show();
+			//hide the hand plant
+			$('.hands-img').hide();
 
 			timerOn = true;
 		}

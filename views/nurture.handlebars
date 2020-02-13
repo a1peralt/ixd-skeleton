@@ -39,9 +39,10 @@
 				</ul>
 
 				<ul id ="hamWords" style="list-style:none; line-height:120px;">
-					<li><a href="/">Home</a></li>
+					<li><a class = "Home">Home</a></li>
 					<li><a href="/settings/Profile">Profile</a></li>
 					<li><a href="/mygarden">My Garden </a></li> 
+					<li>Collaborate</li>
 					<li><a href="/settings/Help">Help</a></li>
 					<li><a href="/settings/Logout">Logout</a></li>
 				</ul>
@@ -56,6 +57,7 @@
 					$("#hamWords").hide();
 					$("#cross").hide();
 					$(".panel").hide();
+					$(".planted").hide();
 				});
 				
 
@@ -71,6 +73,13 @@
 					$("#hamWords").toggle("slow");
 					$("#cross").hide()
 					$("#hamburger").show()
+					$(".panel").toggle("slow");
+				})
+
+				$(".Home").click(function() {
+					$("#hamWords").toggle("slow");
+					$("#cross").hide();
+					$("#hamburger").show();
 					$(".panel").toggle("slow");
 				})
 			</script>
@@ -96,6 +105,9 @@
 		</div>
 
 		<img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/hand-sprout-color.png?raw=true" class="hands-img" />
+
+		<img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/sprout.png?raw=true" class="planted" />
+
 
 		<!--
 		<svg height=relative width=relative>
