@@ -184,3 +184,10 @@ function startTimer(duration, display) {
     timer();
     time = setInterval(timer, 1000);
 }
+
+function manualUserInput(){
+  var str = document.getElementById("userInput").value;
+  userTime = str
+  startTimer(userTime, $('#banner'));
+  $("#userInputScreen").toggle("medium");
+}

@@ -80,6 +80,27 @@
 			</button>
 		</div>
 
+		<!--Toggle the User Hourglass/Input Screen-->
+			<script>
+				
+				$(document).ready(function() {
+					$("#userInputScreen").hide();
+				});
+				
+
+				$("#hourglass-btn").click(function() {
+					$("#userInputScreen").toggle("medium");
+					$("#userInputScreen").show();
+				});
+						
+			</script>
+
+		<div id="userInputScreen">
+			<input id="userInput" placeholder="Enter Time (in Seconds)">
+			<br>
+			<button onclick="manualUserInput()" id = "userInput-btn>"> Set Time </button>
+		</div>
+
 		<div id="banner">
 			Set how long you'd like to nurture!
 		</div>
