@@ -97,6 +97,9 @@ function initializePage() {
 
 		//Start timer
 		if(timerOn == false){
+
+      //Update text
+      $('#banner').css('fontSize','60px');
 			
 			//Start timer with default time
 			if(userTime == null){
