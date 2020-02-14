@@ -11,6 +11,41 @@ var mins;
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
+  //Toggle hamburger
+  $("#hamWords").hide();
+          $("#cross").hide();
+          $(".panel").hide();
+          $(".planted").hide();
+
+  $("#hamburger").click(function() {
+          console.log("test!!!");
+          $("#hamWords").toggle("slow");
+          $("#hamburger").hide();
+          $("#cross").show();
+          $(".panel").toggle("slow");
+        });
+
+        $("#cross").click(function(){
+          $("#hamWords").toggle("slow");
+          $("#cross").hide()
+          $("#hamburger").show()
+          $(".panel").toggle("slow");
+        })
+
+        $(".Home").click(function() {
+          $("#hamWords").toggle("slow");
+          $("#cross").hide();
+          $("#hamburger").show();
+          $(".panel").toggle("slow");
+        })
+
+  //User input screen
+  $("#userInputScreen").hide();
+  $("#hourglass-btn").click(function() {
+          $("#userInputScreen").toggle("medium");
+          $("#userInputScreen").show();
+        });
 })
 
 /*

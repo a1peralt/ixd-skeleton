@@ -50,59 +50,11 @@
 			
 		</div>
 
-			<!--toggle the hamburger-->
-			<script>
-				
-				$(document).ready(function() {
-					$("#hamWords").hide();
-					$("#cross").hide();
-					$(".panel").hide();
-					$(".planted").hide();
-				});
-				
-
-				$("#hamburger").click(function() {
-					console.log("test!!!");
-					$("#hamWords").toggle("slow");
-					$("#hamburger").hide();
-					$("#cross").show();
-					$(".panel").toggle("slow");
-				});
-
-				$("#cross").click(function(){
-					$("#hamWords").toggle("slow");
-					$("#cross").hide()
-					$("#hamburger").show()
-					$(".panel").toggle("slow");
-				})
-
-				$(".Home").click(function() {
-					$("#hamWords").toggle("slow");
-					$("#cross").hide();
-					$("#hamburger").show();
-					$(".panel").toggle("slow");
-				})
-			</script>
 
 		<div id="hourglass">
 			<button id="hourglass-btn">
 			</button>
 		</div>
-
-		<!--Toggle the User Hourglass/Input Screen-->
-			<script>
-				
-				$(document).ready(function() {
-					$("#userInputScreen").hide();
-				});
-				
-
-				$("#hourglass-btn").click(function() {
-					$("#userInputScreen").toggle("medium");
-					$("#userInputScreen").show();
-				});
-						
-			</script>
 
 		<div id="userInputScreen">
 			<input id="userInput" placeholder="Enter Time (in Seconds)">
