@@ -14,38 +14,40 @@ $(document).ready(function() {
 
   //Toggle hamburger
   $("#hamWords").hide();
-          $("#cross").hide();
-          $(".panel").hide();
-          $(".planted").hide();
+    $("#cross").hide();
+    $(".panel").hide();
+    $(".planted").hide();
 
   $("#hamburger").click(function() {
-          console.log("test!!!");
-          $("#hamWords").toggle("slow");
-          $("#hamburger").hide();
-          $("#cross").show();
-          $(".panel").toggle("slow");
-        });
+          
+    $("#hamWords").toggle("slow");
+    $("#hamburger").hide();
+    $("#cross").show();
+    $(".panel").toggle("slow");
+  });
 
-        $("#cross").click(function(){
-          $("#hamWords").toggle("slow");
-          $("#cross").hide()
-          $("#hamburger").show()
-          $(".panel").toggle("slow");
-        })
+  $("#cross").click(function(){
+    $("#hamWords").toggle("slow");
+    $("#cross").hide()
+    $("#hamburger").show()
+    $(".panel").toggle("slow");
+  })
 
-        $(".Home").click(function() {
-          $("#hamWords").toggle("slow");
-          $("#cross").hide();
-          $("#hamburger").show();
-          $(".panel").toggle("slow");
-        })
+  $(".Home").click(function() {
+    $("#hamWords").toggle("slow");
+    $("#cross").hide();
+    $("#hamburger").show();
+    $(".panel").toggle("slow");
+  })
 
   //User input screen
   $("#userInputScreen").hide();
   $("#hourglass-btn").click(function() {
           $("#userInputScreen").toggle("medium");
           $("#userInputScreen").show();
+          $('#userInput').focus();
         });
+
 })
 
 /*
@@ -124,11 +126,14 @@ function initializePage() {
   	//Hide minute indicator
   	$('#timer-btn').mouseup(function(e){
   		$('#min-indicator').css('visibility', 'hidden');
+      $('#nurture-btn').addClass("button-glow");
   	});
 
 
   	//Default Timer Setting (No time set by user)
 	   $('#nurture-btn').click( function(e){
+
+      $('#nurture-btn').removeClass("button-glow");
 
 		//Start timer
 		if(timerOn == false){
@@ -162,6 +167,8 @@ function initializePage() {
 
     //Stop Timer
 		else{
+      //Confirmation screen
+
 			clearInterval(time);
 			//Console check
 			console.log("Timer ended");
@@ -188,11 +195,10 @@ function startTimer(duration, display) {
         seconds;
 
     function timer() {
-        // get the number of seconds that have elapsed since 
-        // startTimer() was called
+        //Get correct time
         diff = duration - (((Date.now() - start) / 1000) | 0);
 
-        // does the same job as parseInt truncates the float
+        //Parse Ints
         minutes = (diff / 60) | 0;
         seconds = (diff % 60) | 0;
 
@@ -222,14 +228,31 @@ function startTimer(duration, display) {
         }
     };
 
-    // we don't want to wait a full second before the timer starts
+    //Start timer immediately
     timer();
     time = setInterval(timer, 1000);
 }
 
 function manualUserInput(){
   var str = document.getElementById("userInput").value;
-  userTime = str
-  startTimer(userTime, $('#banner'));
+
+  if( Number.isInteger(parseInt(str) ) ){
+    userTime = str * 60;
+
+    //Start Timer
+    startTimer(userTime, $('#banner'));
+    $("#userInputScreen").toggle("medium");
+
+    //show the planted plant image
+      $('.planted').show();
+    //hide the hand plant
+      $('.hands-img').hide();
+  }
+  else{
+    $('userInput').css('border', '1px solid red');
+  }
+}
+
+function cancelUI(){
   $("#userInputScreen").toggle("medium");
 }

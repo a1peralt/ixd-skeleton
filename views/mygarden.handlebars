@@ -17,6 +17,9 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/js/jQueryUI.js"></script>
+
 	<script src="/js/functionality.js"></script>
     <script src="/js/garden.js"></script>
 
@@ -49,32 +52,6 @@
 				
 			
 		</div>
-
-			<!--toggle the hamburger-->
-			<script>
-				
-				$(document).ready(function() {
-					$("#hamWords").hide();
-					$("#cross").hide();
-					$(".panel").hide();
-				});
-				
-
-				$("#hamburger").click(function() {
-					console.log("test!!!");
-					$("#hamWords").toggle("slow");
-					$("#hamburger").hide();
-					$("#cross").show();
-					$(".panel").toggle("slow");
-				});
-
-				$("#cross").click(function(){
-					$("#hamWords").toggle("slow");
-					$("#cross").hide()
-					$("#hamburger").show()
-					$(".panel").toggle("slow");
-				})
-			</script>
 
         <!--adding margins - wait do we want this-->
         <div class="container">

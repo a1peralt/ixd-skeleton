@@ -6,6 +6,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/Nurture.css" rel="stylesheet">
+	<link href="/css/Animations.css" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
@@ -20,6 +21,7 @@
 
 </head>
 <body>
+	<img id="sky" src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png" width="100%">
 
 
 	<div class="screen">
@@ -57,9 +59,12 @@
 		</div>
 
 		<div id="userInputScreen">
-			<input id="userInput" placeholder="Enter Time (in Seconds)">
+			<input id="userInput" placeholder="Enter Time (in Minutes)">
 			<br>
+			<div id="confirmation">
 			<button onclick="manualUserInput()" id = "userInput-btn>"> Set Time </button>
+			<button onclick="cancelUI()">Cancel</button>
+			</div>
 		</div>
 
 		<div id="banner">
@@ -89,16 +94,15 @@
 		-->
 
 		<div class="ground">
+			
+
+			<button id="nurture-btn" style= "margin:auto;">
+					Nurture <img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true" class="heart-img" />
+			</button>
 
 			<div class="btn-back">
-				Start Nurturing!
 
 				<br>
-
-				<button id="nurture-btn" style= "text-align: center;">
-					Nurture <img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true" class="heart-img" />
-				
-				</button>
 
 				<br>
 

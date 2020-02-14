@@ -1,15 +1,18 @@
-.screen{
-	/*Screen Formatting*/
-	position:relative;
-	margin: auto;
-	
-	border: 1px solid black;
-	width: 375px;
-	height: 812px;
-	background: blue;
-	background-color: #6adffc;
+body{
+	margin:auto;
 	font-family: 'Fredoka One', cursive;
+	overflow: hidden;
 
+	background-image: url(
+		https://raw.githubusercontent.com
+		/a1peralt/ixd-skeleton/master/resources
+		/Sky%20Gradient.png);
+	
+}
+
+#sky{
+	position: absolute;
+	bottom:125px;
 }
 
 .panel{
@@ -91,39 +94,38 @@
 }
 
 .ground{
+
+	background-image: url(https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Ground.png);
+	background-size:100% 250px;
+	background-repeat: no-repeat;
+	background-position: 0px -30px;
+
 	/*Line Formatting*/
 	position: absolute;
 	bottom: 0px;
-	background-color:#bb6330;
-	width:inherit;
 	height:180px;
-}
+	width:100%;
 
-.btn-back{
-	/*Box Formatting*/
-	position: absolute;
-	bottom: 0px;
-	background-color:#00cc00;
-	width:inherit;
-	height:150px;
-
-	/*Text Formatting*/
-	padding-top: 10px;
-	vertical-align: top;
-	text-align: center;
+	/*Text*/
 	color:white;
 	font-size: 20px;
+
+	display: flex;
+	align-items: center;
+	overflow:hidden;
 }
 
 #nurture-btn{
-	/*Positioning*/
-	margin-top: 10px;
+
+	/*Center*/
+	display: block;
+	margin: 0 auto;
+
+
 	font-size: 35px;
 	letter-spacing: 2px;
 	color:black;
 	width:300px;
-
-	display: inline-block;
 
 	border-radius: 15px;
 	background-color: white;
@@ -302,15 +304,29 @@ a:hover{
 }
 
 #userInputScreen{
+	border:3px solid green;
+
 	position: absolute;
 	width: 280px;
-	height: 400px;
+	height: 100px;
 	background: black;
-	color: #fff;
+	color: #ffffff;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	opacity: .90;
 	z-index: 3;
 
+}
+
+#userInput{
+	/*Text box positioning*/
+	display: block;
+	margin: 0 auto;
+
+	text-align: center;
+}
+
+#confirmation{
+	text-align: center;
 }
