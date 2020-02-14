@@ -240,6 +240,7 @@ function manualUserInput(){
     userTime = str * 60;
 
     $("#userInputScreen").toggle("medium");
+    $('#hourglass-btn').removeClass("hourglass-glow");
     $('#nurture-btn').addClass("button-glow");
 
   }

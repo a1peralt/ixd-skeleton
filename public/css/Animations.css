@@ -1,3 +1,4 @@
+/*Nurture Button glow*/
 @keyframes glowing {
   0% { box-shadow: 0 0 -10px #c4a300; }
   40% { box-shadow: 0 0 20px #c4a300; }
@@ -7,4 +8,33 @@
 
 .button-glow {
   animation: glowing 1500ms infinite;
+}
+
+
+
+/*Moves the background*/
+@keyframes timelapse{
+	0%{bottom:125px;}
+	50%{bottom:-3188px;}
+	100%{bottom:125px;}
+}
+
+.timelapse{
+	animation: timelapse 240000ms infinite;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+
+
+/*Nurture Button glow*/
+@keyframes whiteglow {
+  0% { box-shadow: 0 0 -10px #ffffff; }
+  40% { box-shadow: 0 0 20px #ffffff; }
+  60% { box-shadow: 0 0 20px #ffffff; }
+  100% { box-shadow: 0 0 -10px #ffffff; }
+}
+
+.hourglass-glow {
+  animation: whiteglow 2000ms infinite;
 }

@@ -3,9 +3,12 @@ body{
 	font-family: 'Fredoka One', cursive;
 	overflow: hidden;
 
-	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
-	background-position: bottom; 
+}
 
+.screen{
+	height:100%;
+	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
+	background-position: 0px 1000px;
 }
 
 #sky{
@@ -63,6 +66,7 @@ body{
 	left:15px;
 	top:80px;
 
+	/*text-shadow: 1px 3px 5px black;*/
 	color:white;
 }
 
