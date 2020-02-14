@@ -19,6 +19,8 @@ var nurture2Ham = require('./routes/nurture2Ham');
 
 var settings = require('./routes/settings');
 
+var login = require('./routes/login');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -50,6 +52,7 @@ app.get('/nurture2', nurture2.view);
 app.get('/nurtureHam',nurtureHam.view);
 app.get('/nurture2Ham', nurture2Ham.view);
 app.get('/mygarden', mygarden.view);
+app.get('/login', login.view);
 
 app.get('/settings/:pageName', settings.view);
 
