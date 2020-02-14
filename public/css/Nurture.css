@@ -3,10 +3,8 @@ body{
 	font-family: 'Fredoka One', cursive;
 	overflow: hidden;
 
-	background-image: url(
-		https://raw.githubusercontent.com
-		/a1peralt/ixd-skeleton/master/resources
-		/Sky%20Gradient.png);
+	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
+	background-position: bottom; 
 
 }
 
@@ -83,8 +81,8 @@ body{
 #cross{
 	/*Positioning*/
 	position:absolute;
-	left:0px;
-	top:0px;
+	left:-20px;
+	top:10px;
 	z-index: 2;
 
 	/*Size*/
@@ -305,16 +303,20 @@ a:hover{
 
 #userInputScreen{
 	border:3px solid green;
+	background-color: white;
+	border-radius: 15px;
 
 	position: absolute;
 	width: 280px;
 	height: 100px;
-	background: black;
 	color: #ffffff;
+
+	padding-top: 10px;
 	top: 50%;
 	left: 50%;
+
+
 	transform: translate(-50%,-50%);
-	opacity: .90;
 	z-index: 3;
 
 }
@@ -323,8 +325,17 @@ a:hover{
 	/*Text box positioning*/
 	display: block;
 	margin: 0 auto;
-
 	text-align: center;
+
+	/*Text box style*/
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid green;
+
+	/*Text*/
+	color:black;
+	font-size: 18px;
 }
 
 #confirmation{

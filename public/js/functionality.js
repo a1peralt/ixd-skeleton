@@ -205,7 +205,7 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.text(minutes + ":" + seconds + "\n remaining"); 
+        display.html(minutes + ":" + seconds + "\n remaining"); 
 
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
@@ -239,14 +239,9 @@ function manualUserInput(){
   if( Number.isInteger(parseInt(str) ) ){
     userTime = str * 60;
 
-    //Start Timer
-    startTimer(userTime, $('#banner'));
     $("#userInputScreen").toggle("medium");
+    $('#nurture-btn').addClass("button-glow");
 
-    //show the planted plant image
-      $('.planted').show();
-    //hide the hand plant
-      $('.hands-img').hide();
   }
   else{
     $('userInput').css('border', '1px solid red');
