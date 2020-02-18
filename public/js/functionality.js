@@ -6,6 +6,7 @@ var userTime;
 var timerOn = false;
 var time;
 var mins;
+var text_time;
 
 
 // Call this function when the page loads (the "ready" event)
@@ -75,47 +76,58 @@ function initializePage() {
   			//console.log(mins);
 
   			if(mins > 500){
-  				userTime = 1*60;
+				  userTime = 1*60;
+				  text_time = "1 min";
   				$('#min-indicator').text('1min');
   			}
   			if(mins < 500 && mins > 450){
-  				userTime = 5*60;
+				  userTime = 5*60;
+				  text_time = "5 min";
   				$('#min-indicator').text('5min');
   			}
   			if(mins < 450 && mins > 400){
-  				userTime = 10*60;
+				  userTime = 10*60;
+				  text_time = "10 min";
   				$('#min-indicator').text('10min');
   			}
   			if(mins < 400 && mins > 350){
-  				userTime = 20*60;
+				  userTime = 20*60;
+				  text_time = "20 min";
   				$('#min-indicator').text('20min');
   			}
   			if(mins < 350 && mins > 300){
-  				userTime = 30*60;
+				  userTime = 30*60;
+				  text_time = "30 min";
   				$('#min-indicator').text('30min');
   			}
   			if(mins < 300 && mins > 250){
-  				userTime = 40*60;
+				  userTime = 40*60;
+				  text_time = "40 min";
   				$('#min-indicator').text('40min');
   			}
   			if(mins < 250 && mins > 200){
-  				userTime = 50*60;
+				  userTime = 50*60;
+				  text_time = "50 min";
   				$('#min-indicator').text('50min');
   			}
   			if(mins < 200 && mins > 150){
-  				userTime = 60*60;
+				  userTime = 60*60;
+				  text_time = "60 min";
   				$('#min-indicator').text('60min');
   			}
   			if(mins < 150 && mins > 100){
-  				userTime = 80*60;
+				  userTime = 80*60;
+				  text_time = "80 min";
   				$('#min-indicator').text('80min');
   			}
   			if(mins < 100 && mins > 50){
-  				userTime = 100*60;
+				  userTime = 100*60;
+				  text_time = "100 min";
   				$('#min-indicator').text('100min');
   			}
   			if(mins < 50){
-  				userTime = 120*60;
+				  userTime = 120*60;
+				  text_time = "120 min";
   				$('#min-indicator').text('120min');
   			}
 
@@ -220,12 +232,37 @@ function startTimer(duration, display) {
           clearInterval(time);
 
           //Set Banner Text
-          $('#banner').html('Time is up!');
+		  $('#banner').html('Time is up!');
+		  console.log(text_time);
 
           //Reset Button functionality
           $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
-          timerOn = false;
-        }
+		  timerOn = false;
+		  
+		  //push plant grown info into json/mygarden page
+		  //var text_time, 
+
+			var fs = require('fs');
+
+			fs.readFile('../plantData.json', 'utf-8', function(err, data) {
+				if (err) throw err
+
+				var data = JSON.parse(data);
+				data.users.push({
+					name : "filler",
+					image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
+					date : "filler",
+					time : text_time
+				});
+
+				console.log(data);
+
+				fs.writeFile('../plantDatajson', JSON.stringify(data), 'utf-8', function(err) {
+					if (err) throw err
+					console.log('Done!');
+				});
+			});
+		}
     };
 
     //Start timer immediately
