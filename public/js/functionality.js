@@ -17,6 +17,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $(".panel").hide();
     $(".planted").hide();
+    $("#inactivator").hide();
 
   $("#hamburger").click(function() {
           
@@ -24,13 +25,15 @@ $(document).ready(function() {
     $("#hamburger").hide();
     $("#cross").show();
     $(".panel").toggle("slow");
+    $("#inactivator").toggle('slow');
   });
 
   $("#cross").click(function(){
     $("#hamWords").toggle("slow");
-    $("#cross").hide()
-    $("#hamburger").show()
+    $("#cross").hide();
+    $("#hamburger").show();
     $(".panel").toggle("slow");
+    $("#inactivator").toggle('slow');
   })
 
   $(".Home").click(function() {
@@ -38,15 +41,27 @@ $(document).ready(function() {
     $("#cross").hide();
     $("#hamburger").show();
     $(".panel").toggle("slow");
+    $("#inactivator").hide();
   })
 
+    //Inactivator
+  $('#inactivator').click(function() {
+    $("#hamWords").toggle("slow");
+    $("#cross").hide();
+    $("#hamburger").show();
+    $(".panel").toggle("slow");
+    $("#inactivator").toggle('slow');
+  });
+
+
   //User input screen
+  /*
   $("#userInputScreen").hide();
   $("#hourglass-btn").click(function() {
           $("#userInputScreen").toggle("medium");
           $("#userInputScreen").show();
           $('#userInput').focus();
-        });
+        });*/
 
 })
 
@@ -76,48 +91,101 @@ function initializePage() {
 
   			if(mins > 500){
   				userTime = 1*60;
-  				$('#min-indicator').text('1min');
-  			}
-  			if(mins < 500 && mins > 450){
-  				userTime = 5*60;
   				$('#min-indicator').text('5min');
   			}
-  			if(mins < 450 && mins > 400){
-  				userTime = 10*60;
+  			if(mins < 500 && mins > 480){
+  				userTime = 5*60;
   				$('#min-indicator').text('10min');
   			}
-  			if(mins < 400 && mins > 350){
+  			if(mins < 480 && mins > 460){
+  				userTime = 10*60;
+  				$('#min-indicator').text('15min');
+  			}
+  			if(mins < 460 && mins > 440){
   				userTime = 20*60;
   				$('#min-indicator').text('20min');
   			}
-  			if(mins < 350 && mins > 300){
+  			if(mins < 440 && mins > 420){
+  				userTime = 25*60;
+  				$('#min-indicator').text('25min');
+  			}
+  			if(mins < 420 && mins > 400){
   				userTime = 30*60;
   				$('#min-indicator').text('30min');
   			}
-  			if(mins < 300 && mins > 250){
+  			if(mins < 400 && mins > 380){
+  				userTime = 35*60;
+  				$('#min-indicator').text('35min');
+  			}
+  			if(mins < 380 && mins > 360){
   				userTime = 40*60;
   				$('#min-indicator').text('40min');
   			}
-  			if(mins < 250 && mins > 200){
+  			if(mins < 360 && mins > 340){
+  				userTime = 45*60;
+  				$('#min-indicator').text('45min');
+  			}
+  			if(mins < 340 && mins > 320){
   				userTime = 50*60;
   				$('#min-indicator').text('50min');
   			}
-  			if(mins < 200 && mins > 150){
-  				userTime = 60*60;
-  				$('#min-indicator').text('60min');
-  			}
-  			if(mins < 150 && mins > 100){
-  				userTime = 80*60;
-  				$('#min-indicator').text('80min');
-  			}
-  			if(mins < 100 && mins > 50){
-  				userTime = 100*60;
-  				$('#min-indicator').text('100min');
-  			}
-  			if(mins < 50){
-  				userTime = 120*60;
-  				$('#min-indicator').text('120min');
-  			}
+        if(mins < 320 && mins > 300){
+          userTime = 55*60;
+          $('#min-indicator').text('55min');
+        }
+        if(mins < 300 && mins > 280){
+          userTime = 60*60;
+          $('#min-indicator').text('60min');
+        }
+        /////////// Half way ////////////////
+        if(mins < 280 && mins > 260){
+          userTime = 65*60;
+          $('#min-indicator').text('65min');
+        }
+        if(mins < 260 && mins > 240){
+          userTime = 70*60;
+          $('#min-indicator').text('70min');
+        }
+        if(mins < 240 && mins > 220){
+          userTime = 75*60;
+          $('#min-indicator').text('75min');
+        }
+        if(mins < 220 && mins > 200){
+          userTime = 80*60;
+          $('#min-indicator').text('80min');
+        }
+        if(mins < 200 && mins > 180){
+          userTime = 85*60;
+          $('#min-indicator').text('85min');
+        }
+        if(mins < 180 && mins > 160){
+          userTime = 90*60;
+          $('#min-indicator').text('90min');
+        }
+        if(mins < 160 && mins > 140){
+          userTime = 95*60;
+          $('#min-indicator').text('95min');
+        }
+        if(mins < 140 && mins > 120){
+          userTime = 100*60;
+          $('#min-indicator').text('100min');
+        }
+        if(mins < 120 && mins > 100){
+          userTime = 105*60;
+          $('#min-indicator').text('105min');
+        }
+        if(mins < 100 && mins > 80){
+          userTime = 110*60;
+          $('#min-indicator').text('110min');
+        }
+        if(mins < 80 && mins > 60){
+          userTime = 115*60;
+          $('#min-indicator').text('115min');
+        }
+        if(mins < 60){
+          userTime = 120*60;
+          $('#min-indicator').text('120min');
+        }
 
   		});
 

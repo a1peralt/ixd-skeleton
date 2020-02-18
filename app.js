@@ -10,12 +10,8 @@ var handlebars = require('express3-handlebars')
 
 //var index = require('./routes/index');
 var nurture = require('./routes/nurture');
-var nurture2 =  require('./routes/nurture2');
 
 var mygarden = require('./routes/garden');
-
-var nurtureHam = require('./routes/nurtureHam');
-var nurture2Ham = require('./routes/nurture2Ham');
 
 var settings = require('./routes/settings');
 
@@ -46,13 +42,18 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-//app.get('/', index.view);
-app.get('/', nurture.view);
-app.get('/nurture2', nurture2.view);
-app.get('/nurtureHam',nurtureHam.view);
-app.get('/nurture2Ham', nurture2Ham.view);
+//First Screen
+app.get('/', login.view);
+
+//Second Screen (logged in)
+app.get('/logged/home', nurture.user);
+//Second Screen (guest)
+app.get('/guest/home', nurture.guest);
+
+
 app.get('/mygarden', mygarden.view);
 app.get('/login', login.view);
+
 
 app.get('/settings/:pageName', settings.view);
 

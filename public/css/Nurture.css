@@ -21,26 +21,49 @@ body{
 	position: absolute;
 	z-index: 1;
 	width:75%;
-	height:812px;
+	height:100%;
 	display: block;
+
 	/*Color*/
 	background-color: white;
+
+	overflow: visible;
+
+}
+
+#inactivator{
+
+	/*Size and position*/
+	position: absolute;
+	height:100%;
+	width:100px;
+	right:-100px;
+
+	background-color: black;
+	filter: opacity(0.8);
+
 }
 
 #hamWords{
+
+	border: 1px solid black;
 
 	/*Positioning*/
 	position: absolute;
 	z-index:2;
 	top:100px;
-	left:0px;
-	height:300px;
-	width:270px;
+	left:75px;
 
-	/*Text info*/
-	text-align: right;
+	/*Size*/
+	height:600px;
+	width:200px;
+
+	/*Text*/
+	text-align: left;
 	font-size: 30px;
-	color: gray;
+	color:grey;
+	padding:5px;
+
 
 }
 
@@ -114,6 +137,7 @@ body{
 	display: flex;
 	align-items: center;
 	overflow:hidden;
+
 }
 
 #nurture-btn{
@@ -233,11 +257,11 @@ body{
 }
 
 a{
-	color:white;
+	color:gray;
 }
 a:hover{
 	text-decoration: none;
-	color: gray;
+	color: black;
 }
 
 .heart-img{
@@ -302,6 +326,8 @@ a:hover{
 	height: 50px;
 	border: 1px solid black;
 	border-radius: 100%;
+
+	z-index: 1;
 }
 
 #userInputScreen{
@@ -322,6 +348,7 @@ a:hover{
 	transform: translate(-50%,-50%);
 	z-index: 3;
 
+	visibility: hidden;
 }
 
 #userInput{

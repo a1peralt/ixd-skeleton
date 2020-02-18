@@ -3,6 +3,10 @@
  * GET home page.
  */
 
-exports.view = function(req, res){
-  res.render('nurture');
+exports.user = function(req, res){
+  res.render('nurtureUSER');
 };
+
+exports.guest = function(req, res){
+	res.render('nurtureGUEST');
+}
