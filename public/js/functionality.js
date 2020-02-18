@@ -236,6 +236,7 @@ function startTimer(duration, display) {
 function manualUserInput(){
   var str = document.getElementById("userInput").value;
 
+  //Check if input is numerical value
   if( Number.isInteger(parseInt(str) ) ){
     userTime = str * 60;
 
@@ -244,6 +245,7 @@ function manualUserInput(){
     $('#nurture-btn').addClass("button-glow");
 
   }
+  //If not numerical value, notify user
   else{
     $('userInput').css('border', '1px solid red');
   }

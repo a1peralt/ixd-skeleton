@@ -24,8 +24,7 @@ body{
 	height:812px;
 	display: block;
 	/*Color*/
-	background-color: black;
-	filter: opacity(0.8);
+	background-color: white;
 }
 
 #hamWords{
@@ -41,7 +40,7 @@ body{
 	/*Text info*/
 	text-align: right;
 	font-size: 30px;
-	color: white;
+	color: gray;
 
 }
 
