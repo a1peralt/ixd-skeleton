@@ -9,6 +9,8 @@ body{
 	height:100%;
 	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
 	background-position: 0px 1000px;
+
+	overflow: hidden;
 }
 
 #sky{
@@ -36,17 +38,16 @@ body{
 	/*Size and position*/
 	position: absolute;
 	height:100%;
-	width:100px;
-	right:-100px;
+	width:100%;
+	z-index: 1;
 
+	/*Appearance*/
 	background-color: black;
-	filter: opacity(0.8);
+	filter: opacity(0.7);
 
 }
 
 #hamWords{
-
-	border: 1px solid black;
 
 	/*Positioning*/
 	position: absolute;
@@ -283,7 +284,7 @@ a:hover{
 .plants{
 	width: 80px;
 	height:80px;
-	left: 50 px;
+	left: 50px;
 	margin-bottom: 90px;
 }
 

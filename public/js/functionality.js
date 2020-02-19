@@ -1,6 +1,4 @@
-'use strict';
-
-//default time of 15 minutes
+//GLOBAL VARIABLES
 var defaultTime = 15 * 60;
 var userTime;
 var timerOn = false;
@@ -26,7 +24,7 @@ $(document).ready(function() {
     $("#hamburger").hide();
     $("#cross").show();
     $(".panel").toggle("slow");
-    $("#inactivator").toggle('slow');
+    $("#inactivator").show(1);
   });
 
   $("#cross").click(function(){
@@ -34,7 +32,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $("#hamburger").show();
     $(".panel").toggle("slow");
-    $("#inactivator").toggle('slow');
+    $("#inactivator").hide(1);
   })
 
   $(".Home").click(function() {
@@ -42,7 +40,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $("#hamburger").show();
     $(".panel").toggle("slow");
-    $("#inactivator").hide();
+    $("#inactivator").hide(1);
   })
 
     //Inactivator
@@ -51,18 +49,8 @@ $(document).ready(function() {
     $("#cross").hide();
     $("#hamburger").show();
     $(".panel").toggle("slow");
-    $("#inactivator").toggle('slow');
+    $("#inactivator").hide(1);
   });
-
-
-  //User input screen
-  /*
-  $("#userInputScreen").hide();
-  $("#hourglass-btn").click(function() {
-          $("#userInputScreen").toggle("medium");
-          $("#userInputScreen").show();
-          $('#userInput').focus();
-        });*/
 
 })
 
