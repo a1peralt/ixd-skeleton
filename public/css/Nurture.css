@@ -149,7 +149,6 @@ body{
 	display: block;
 	margin: 0 auto;
 
-
 	font-size: 35px;
 	letter-spacing: 2px;
 	color:black;
@@ -184,17 +183,19 @@ body{
 	transform: rotateX(180deg);
 	transform-origin: top;
 
-	background-color: royalblue;
+	background-color: #3279a8;
 	border-radius: 20px;
 
 	visibility: hidden;
+
+	overflow: hidden;
 }
 
 #timer-btn{
 	/*Positioning*/
 	position: absolute;
 	right:4%;
-	top:505px;
+	top:515px;
 	width:100px;
 	height:44px;
 

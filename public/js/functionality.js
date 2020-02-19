@@ -135,74 +135,74 @@ function initializePage() {
   				$('#min-indicator').text('50min');
   			}
         if(mins < 320 && mins > 300){
-		  userTime = 55*60;
-		  text_time = "55 min";
+		      userTime = 55*60;
+		      text_time = "55 min";
           $('#min-indicator').text('55min');
         }
         if(mins < 300 && mins > 280){
-		  userTime = 60*60;
-		  text_time = "60 min";
+		      userTime = 60*60;
+		      text_time = "60 min";
           $('#min-indicator').text('60min');
         }
         /////////// Half way ////////////////
         if(mins < 280 && mins > 260){
-		  userTime = 65*60;
-		  text_time = "65 min";
+		      userTime = 65*60;
+		      text_time = "65 min";
           $('#min-indicator').text('65min');
         }
         if(mins < 260 && mins > 240){
-		  userTime = 70*60;
-		  text_time = "70 min";
+		      userTime = 70*60;
+		      text_time = "70 min";
           $('#min-indicator').text('70min');
         }
         if(mins < 240 && mins > 220){
-		  userTime = 75*60;
-		  text_time = "75 min";
+		      userTime = 75*60;
+		      text_time = "75 min";
           $('#min-indicator').text('75min');
         }
         if(mins < 220 && mins > 200){
-		  userTime = 80*60;
-		  text_time = "80 min";
+		      userTime = 80*60;
+		      text_time = "80 min";
           $('#min-indicator').text('80min');
         }
         if(mins < 200 && mins > 180){
-		  userTime = 85*60;
-		  text_time = "85 min";
+		      userTime = 85*60;
+		      text_time = "85 min";
           $('#min-indicator').text('85min');
         }
         if(mins < 180 && mins > 160){
-		  userTime = 90*60;
-		  text_time = "90 min";
+		      userTime = 90*60;
+		      text_time = "90 min";
           $('#min-indicator').text('90min');
         }
         if(mins < 160 && mins > 140){
-		  userTime = 95*60;
-		  text_time = "95 min";
+		      userTime = 95*60;
+		      text_time = "95 min";
           $('#min-indicator').text('95min');
         }
         if(mins < 140 && mins > 120){
-		  userTime = 100*60;
-		  text_time = "100 min";
+		      userTime = 100*60;
+		      text_time = "100 min";
           $('#min-indicator').text('100min');
         }
         if(mins < 120 && mins > 100){
-		  userTime = 105*60;
-		  text_time = "105 min";
+		      userTime = 105*60;
+		      text_time = "105 min";
           $('#min-indicator').text('105min');
         }
         if(mins < 100 && mins > 80){
-		  userTime = 110*60;
-		  text_time = "110 min";
+		      userTime = 110*60;
+		      text_time = "110 min";
           $('#min-indicator').text('110min');
         }
         if(mins < 80 && mins > 60){
-		  userTime = 115*60;
-		  text_time = "115 min";
+		      userTime = 115*60;
+		      text_time = "115 min";
           $('#min-indicator').text('115min');
         }
         if(mins < 60){
-		  userTime = 120*60;
-		  text_time = "120 min";
+		      userTime = 1*60; //CHANGE THIS BACK TO 120*60
+		      text_time = "120 min";
           $('#min-indicator').text('120min');
         }
 
@@ -218,9 +218,8 @@ function initializePage() {
   	});
 
 
-  	//Default Timer Setting (No time set by user)
-	   $('#nurture-btn').click( function(e){
-
+  	//Nurture Button Press
+    $('#nurture-btn').click( function(e){
       $('#nurture-btn').removeClass("button-glow");
 
 		//Start timer
@@ -233,14 +232,16 @@ function initializePage() {
 			if(userTime == null){
 				 startTimer(defaultTime, $('#banner'));
 
-				//Console check
-				console.log("Timer started with default time");
+        //Start slider
+         countdown(defaultTime);
+
 			}
 			//Use the time set by user
 			else{
 				startTimer(userTime, $('#banner'));
-				//Console check
-				console.log("Timer started with user time");
+				
+        //Start slider
+         countdown(userTime);
 			}
 
 			//Change words on button
@@ -253,14 +254,18 @@ function initializePage() {
 			timerOn = true;
 		}
 
-    //Stop Timer
+    //'Abandon' Behavior
 		else{
-      //Confirmation screen
+      //Confirmation screen HERE
 
+      //Stop Timer
 			clearInterval(time);
-			//Console check
-			console.log("Timer ended");
-			//Change words on button
+      
+      //Stop slider countdown
+      $('#progressTimer').stop();
+      $('#timer-btn').stop();
+			
+			//Reset words on button
 			$('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 
 			timerOn = false;
@@ -270,9 +275,6 @@ function initializePage() {
 	);
 
 }
-
-
-
 
 
 
@@ -297,7 +299,7 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.html(minutes + ":" + seconds + "\n remaining"); 
+        display.html(minutes + ":" + seconds + "\n remaining");
 
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
@@ -312,31 +314,31 @@ function startTimer(duration, display) {
           clearInterval(time);
 
           //Set Banner Text
-		  $('#banner').html('Time is up!');
-		  console.log(text_time);
+		      $('#banner').html('Time is up!');
+		      console.log(text_time);
 
           //Reset Button functionality
           $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
-		  timerOn = false;
+		      timerOn = false;
 		  
-		  //push plant grown info into json/mygarden page
-		  //var text_time, 
+		      //push plant grown info into json/mygarden page
+		      //var text_time, 
 
-			var fs = require('../plantData.json');
-			console.log("hello");
+			   var fs = require('../plantData.json');
+			   console.log("hello");
 
-			fs.readFile('../plantData.json', 'utf-8', function(err, data) {
-				if (err) throw err
+			   fs.readFile('../plantData.json', 'utf-8', function(err, data) {
+				    if (err) throw err
 
-				var data = JSON.parse(data);
-				data.plantData.push({
-					name : "filler",
-					image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
-					date : "filler",
-					time : text_time
-				});
+				  var data = JSON.parse(data);
+				    data.plantData.push({
+					   name : "filler",
+					   image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
+					   date : "filler",
+					   time : text_time
+				  });
 
-				console.log(data);
+				  console.log(data);
 
 				fs.writeFile('../plantData.json', JSON.stringify(data), 'utf-8', function(err) {
 					if (err) throw err
@@ -353,3 +355,9 @@ function startTimer(duration, display) {
 
 
 //Time-based countdown
+function countdown(timeleft){
+    $('#progressTimer').animate({ height: "0px"}, timeleft * 1000, "linear");
+    $('#progressTimer').addClass('barbershop');
+
+    $('#timer-btn').animate({top: "515px"}, timeleft * 950, "linear");
+}
