@@ -201,7 +201,7 @@ function initializePage() {
           $('#min-indicator').text('115min');
         }
         if(mins < 60){
-		      userTime = 1*60; //CHANGE THIS BACK TO 120*60
+		      userTime = 120*60;
 		      text_time = "120 min";
           $('#min-indicator').text('120min');
         }
