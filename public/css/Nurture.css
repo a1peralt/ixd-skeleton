@@ -15,7 +15,7 @@ body{
 
 #sky{
 	position: absolute;
-	bottom:125px;
+	bottom: 10px;
 }
 
 .panel{
@@ -120,14 +120,15 @@ body{
 
 .ground{
 
+	/*Appearance*/
 	background-image: url(https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Ground.png);
 	background-size:100% 250px;
 	background-repeat: no-repeat;
 	background-position: 0px -25px;
 
-	/*Line Formatting*/
+	/*Positioning*/
 	position: absolute;
-	bottom: 0px;
+	bottom: -130px;
 	height:180px;
 	width:100%;
 
@@ -135,6 +136,7 @@ body{
 	color:white;
 	font-size: 20px;
 
+	/*Center content*/
 	display: flex;
 	align-items: center;
 	overflow:hidden;
@@ -160,19 +162,38 @@ body{
 #timer{
 	/*Positioning*/
 	position: absolute;
-	left:320px;
+	right:6.5%;
 	top:50px;
 	width:30px;
 	height: 500px;
 
-	background-image: linear-gradient(180deg,rgb(245, 187, 100), rgb(252, 238, 118));
+	background-color: lightgray;
+	filter: opacity(0.6);
 	border-radius: 20px;
+}
+
+
+#progressTimer{
+	/*Positioning*/
+	position: absolute;
+	right:6.5%;
+	top:550px;
+	width:30px;
+	height:0px;
+
+	transform: rotateX(180deg);
+	transform-origin: top;
+
+	background-color: royalblue;
+	border-radius: 20px;
+
+	visibility: hidden;
 }
 
 #timer-btn{
 	/*Positioning*/
 	position: absolute;
-	left:260px;
+	right:4%;
 	top:505px;
 	width:100px;
 	height:44px;
@@ -232,8 +253,8 @@ body{
 	/*Positioning*/
 	position: absolute;
 	left:0px;
-	top:440px;
-	object-position: -15px;
+	top:540px;
+	object-position: -20px;
 
 	width:200px;
 	height:200px;

@@ -70,75 +70,27 @@ function initializePage() {
 	//Show minute indicator
   	$('#timer-btn').mousedown( function(e){
   		$('#min-indicator').css('visibility', 'visible');
+      $('#progressTimer').css('visibility', 'visible');
 
   		//Get draggable location
-  		$('#timer-btn').mousemove(function(e){
+  		$('#timer-btn').mousemove(function(){
   			mins = parseInt( $('#timer-btn').css('top'), 10 );
 
-  			//Console check
-  			//console.log(mins);
+        var height = 530-mins;
+        $('#progressTimer').css('height', height+'px');
 
-  			if(mins > 500){
-				  userTime = 1*60;
-				  text_time = "1 min";
-  				$('#min-indicator').text('1min');
-  			}
-  			if(mins < 500 && mins > 450){
-				  userTime = 5*60;
-				  text_time = "5 min";
-  				$('#min-indicator').text('5min');
-  			}
-  			if(mins < 450 && mins > 400){
-				  userTime = 10*60;
-				  text_time = "10 min";
-  				$('#min-indicator').text('10min');
-  			}
-  			if(mins < 400 && mins > 350){
-				  userTime = 20*60;
-				  text_time = "20 min";
-  				$('#min-indicator').text('20min');
-  			}
-  			if(mins < 350 && mins > 300){
-				  userTime = 30*60;
-				  text_time = "30 min";
-  				$('#min-indicator').text('30min');
-  			}
-  			if(mins < 300 && mins > 250){
-				  userTime = 40*60;
-				  text_time = "40 min";
-  				$('#min-indicator').text('40min');
-  			}
-  			if(mins < 250 && mins > 200){
-				  userTime = 50*60;
-				  text_time = "50 min";
-  				$('#min-indicator').text('50min');
-  			}
-  			if(mins < 200 && mins > 150){
-				  userTime = 60*60;
-				  text_time = "60 min";
-  				$('#min-indicator').text('60min');
-  			}
-  			if(mins < 150 && mins > 100){
-				  userTime = 80*60;
-				  text_time = "80 min";
-  				$('#min-indicator').text('80min');
-  			}
-  			if(mins < 100 && mins > 50){
-				  userTime = 100*60;
-				  text_time = "100 min";
-  				$('#min-indicator').text('100min');
-  			}
-  			if(mins < 50){
-				  userTime = 120*60;
-				  text_time = "120 min";
-  				$('#min-indicator').text('120min');
-  			}
-				  (userTime = 1*60);
-				  text_time = "5 min";
-  				$('#min-indicator').text('5min');
+
+  			
+        //UPDATE THE TIMER VALUE
+
+        if(mins > 500){
+          userTime = 5*60;
+          text_time = "5 min";
+          $('#min-indicator').text('5min');
+        }
 		
   			if(mins < 500 && mins > 480){
-				  userTime = 5*60;
+				  userTime = 10*60;
 				  text_time = "10 min";
   				$('#min-indicator').text('10min');
   			}
@@ -262,6 +214,7 @@ function initializePage() {
   	$('#timer-btn').mouseup(function(e){
   		$('#min-indicator').css('visibility', 'hidden');
       $('#nurture-btn').addClass("button-glow");
+      $('.ground').addClass('groundslide');
   	});
 
 
@@ -317,6 +270,10 @@ function initializePage() {
 	);
 
 }
+
+
+
+
 
 
 /*Timer functionality*/
@@ -394,24 +351,5 @@ function startTimer(duration, display) {
     time = setInterval(timer, 1000);
 }
 
-function manualUserInput(){
-  var str = document.getElementById("userInput").value;
 
-  //Check if input is numerical value
-  if( Number.isInteger(parseInt(str) ) ){
-    userTime = str * 60;
-
-    $("#userInputScreen").toggle("medium");
-    $('#hourglass-btn').removeClass("hourglass-glow");
-    $('#nurture-btn').addClass("button-glow");
-
-  }
-  //If not numerical value, notify user
-  else{
-    $('userInput').css('border', '1px solid red');
-  }
-}
-
-function cancelUI(){
-  $("#userInputScreen").toggle("medium");
-}
+//Time-based countdown
