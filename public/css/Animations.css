@@ -14,7 +14,7 @@
 
 /*Moves the background*/
 @keyframes timelapse{
-	0%{bottom:125px;}
+	0%{bottom:10px;}
 	50%{bottom:-3188px;}
 	100%{bottom:125px;}
 }
@@ -37,4 +37,32 @@
 
 .hourglass-glow {
   animation: whiteglow 2000ms infinite;
+}
+
+
+/*Moves the ground to position after user sets time*/
+@keyframes groundslide{
+  0%{ bottom:-130px; }
+  100%{bottom: 0px; }
+}
+
+.groundslide{
+  animation: groundslide 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+
+@keyframes barbershop{
+    0%{background-position: 0px 0px;}
+    100%{background-position: 0px -28px;}
+}
+
+.barbershop{
+  background-image:  
+      repeating-linear-gradient(45deg, #285580, #285580 12px, #f2f2f2 12px, #f2f2f2 20px);
+
+  background-size: 150% 150%;
+
+  animation: barbershop 1000ms infinite linear forwards;
 }

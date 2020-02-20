@@ -22,39 +22,33 @@
 
 </head>
 <body>
-	<img id="sky" class="timelapse"src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png" width="100%">
+	<img id="sky" class="timelapse" src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png" width="100%">
 
-	<div class="screen">
-
-
-		
-		<div id= "menu">
+	<div id="inactivator"></div>
 
 			<div id ="hamburger">
 			<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger.png" height=50px width=50px>
 			</div>
 
-				<ul id= "cross">
-						<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/x.png" height=50px width=50px>
-				</ul>
+			<ul id= "cross">
+				<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/x.png" height=50px width=50px>
+			</ul>
 				
-				<ul class = "panel">
-					<div id="inactivator"></div>
-				</ul>
+			<div class = "panel">
 
 				<ul id ="hamWords" style="list-style:none; line-height:120px;">
 					<li><a class = "Home">Home</a></li>
-					<li><a href="/login">Login</a></li>
 					<li><a href="/mygarden">My Garden</a></li> 
 					<li><a href="#">Collaborate</a></li>
 					<li><a href="/settings/Help">Help</a></li>
+					<li><a href="/login">Logout</a></li>
 				</ul>
-		</div>
+			</div>
+
+
 
 
 		<div id="hourglass">
-			<button id="hourglass-btn">
-			</button>
 		</div>
 
 		<div id="banner">
@@ -64,9 +58,10 @@
 		<div id="timer">
 		</div>
 
+		<div id="progressTimer"></div>
 		<div id="timer-btn" class="ui-draggable ui-draggable-handle">
 			<svg width=100% height=100%>
-				<circle cx=75 cy=20 r=20 fill=white />
+				<circle cx=75 cy=20 r=20 fill=white class="glowing" />
 			</svg>
 			<div id="min-indicator">
 			</div>
@@ -75,13 +70,6 @@
 		<img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/hand-sprout-color.png?raw=true" class="hands-img" />
 
 		<img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/sprout.png?raw=true" class="planted" />
-
-
-		<!--
-		<svg height=relative width=relative>
-			<rect x=320px y=50px rx=20px height=500px width=30px id="timer"></rect>
-		</svg>
-		-->
 
 		<div class="ground">
 			

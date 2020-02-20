@@ -1,6 +1,4 @@
-'use strict';
-
-//default time of 15 minutes
+//GLOBAL VARIABLES
 var defaultTime = 15 * 60;
 var userTime;
 var timerOn = false;
@@ -27,7 +25,7 @@ $(document).ready(function() {
     $("#hamburger").hide();
     $("#cross").show();
     $(".panel").toggle("slow");
-    $("#inactivator").toggle('slow');
+    $("#inactivator").show(1);
   });
 
   $("#cross").click(function(){
@@ -35,7 +33,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $("#hamburger").show();
     $(".panel").toggle("slow");
-    $("#inactivator").toggle('slow');
+    $("#inactivator").hide(1);
   })
 
   $(".Home").click(function() {
@@ -43,7 +41,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $("#hamburger").show();
     $(".panel").toggle("slow");
-    $("#inactivator").hide();
+    $("#inactivator").hide(1);
   })
 
     //Inactivator
@@ -52,7 +50,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $("#hamburger").show();
     $(".panel").toggle("slow");
-    $("#inactivator").toggle('slow');
+    $("#inactivator").hide(1);
   });
 
 
@@ -76,82 +74,38 @@ function initializePage() {
 
 	//Draggable timer-btn
 	$( function() {
-    	$( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
+
+      if(timerOn == false){
+    	   $( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
+      }
+
   	});
 
 
 	//Show minute indicator
   	$('#timer-btn').mousedown( function(e){
   		$('#min-indicator').css('visibility', 'visible');
+      $('#progressTimer').css('visibility', 'visible');
 
   		//Get draggable location
-  		$('#timer-btn').mousemove(function(e){
+  		$('#timer-btn').mousemove(function(){
   			mins = parseInt( $('#timer-btn').css('top'), 10 );
 
-  			//Console check
-  			//console.log(mins);
+        var height = 530-mins;
+        $('#progressTimer').css('height', height+'px');
 
-  			if(mins > 500){
-				  userTime = 1*60;
-				  text_time = "1 min";
-  				$('#min-indicator').text('1min');
-  			}
-  			if(mins < 500 && mins > 450){
-				  userTime = 5*60;
-				  text_time = "5 min";
-  				$('#min-indicator').text('5min');
-  			}
-  			if(mins < 450 && mins > 400){
-				  userTime = 10*60;
-				  text_time = "10 min";
-  				$('#min-indicator').text('10min');
-  			}
-  			if(mins < 400 && mins > 350){
-				  userTime = 20*60;
-				  text_time = "20 min";
-  				$('#min-indicator').text('20min');
-  			}
-  			if(mins < 350 && mins > 300){
-				  userTime = 30*60;
-				  text_time = "30 min";
-  				$('#min-indicator').text('30min');
-  			}
-  			if(mins < 300 && mins > 250){
-				  userTime = 40*60;
-				  text_time = "40 min";
-  				$('#min-indicator').text('40min');
-  			}
-  			if(mins < 250 && mins > 200){
-				  userTime = 50*60;
-				  text_time = "50 min";
-  				$('#min-indicator').text('50min');
-  			}
-  			if(mins < 200 && mins > 150){
-				  userTime = 60*60;
-				  text_time = "60 min";
-  				$('#min-indicator').text('60min');
-  			}
-  			if(mins < 150 && mins > 100){
-				  userTime = 80*60;
-				  text_time = "80 min";
-  				$('#min-indicator').text('80min');
-  			}
-  			if(mins < 100 && mins > 50){
-				  userTime = 100*60;
-				  text_time = "100 min";
-  				$('#min-indicator').text('100min');
-  			}
-  			if(mins < 50){
-				  userTime = 120*60;
-				  text_time = "120 min";
-  				$('#min-indicator').text('120min');
-  			}
-				  (userTime = 1*60);
-				  text_time = "5 min";
-  				$('#min-indicator').text('5min');
+
+  			
+        //UPDATE THE TIMER VALUE
+
+        if(mins > 500){
+          userTime = 5*60;
+          text_time = "5 min";
+          $('#min-indicator').text('5min');
+        }
 		
   			if(mins < 500 && mins > 480){
-				  userTime = 5*60;
+				  userTime = 10*60;
 				  text_time = "10 min";
   				$('#min-indicator').text('10min');
   			}
@@ -196,74 +150,74 @@ function initializePage() {
   				$('#min-indicator').text('50min');
   			}
         if(mins < 320 && mins > 300){
-		  userTime = 55*60;
-		  text_time = "55 min";
+		      userTime = 55*60;
+		      text_time = "55 min";
           $('#min-indicator').text('55min');
         }
         if(mins < 300 && mins > 280){
-		  userTime = 60*60;
-		  text_time = "60 min";
+		      userTime = 60*60;
+		      text_time = "60 min";
           $('#min-indicator').text('60min');
         }
         /////////// Half way ////////////////
         if(mins < 280 && mins > 260){
-		  userTime = 65*60;
-		  text_time = "65 min";
+		      userTime = 65*60;
+		      text_time = "65 min";
           $('#min-indicator').text('65min');
         }
         if(mins < 260 && mins > 240){
-		  userTime = 70*60;
-		  text_time = "70 min";
+		      userTime = 70*60;
+		      text_time = "70 min";
           $('#min-indicator').text('70min');
         }
         if(mins < 240 && mins > 220){
-		  userTime = 75*60;
-		  text_time = "75 min";
+		      userTime = 75*60;
+		      text_time = "75 min";
           $('#min-indicator').text('75min');
         }
         if(mins < 220 && mins > 200){
-		  userTime = 80*60;
-		  text_time = "80 min";
+		      userTime = 80*60;
+		      text_time = "80 min";
           $('#min-indicator').text('80min');
         }
         if(mins < 200 && mins > 180){
-		  userTime = 85*60;
-		  text_time = "85 min";
+		      userTime = 85*60;
+		      text_time = "85 min";
           $('#min-indicator').text('85min');
         }
         if(mins < 180 && mins > 160){
-		  userTime = 90*60;
-		  text_time = "90 min";
+		      userTime = 90*60;
+		      text_time = "90 min";
           $('#min-indicator').text('90min');
         }
         if(mins < 160 && mins > 140){
-		  userTime = 95*60;
-		  text_time = "95 min";
+		      userTime = 95*60;
+		      text_time = "95 min";
           $('#min-indicator').text('95min');
         }
         if(mins < 140 && mins > 120){
-		  userTime = 100*60;
-		  text_time = "100 min";
+		      userTime = 100*60;
+		      text_time = "100 min";
           $('#min-indicator').text('100min');
         }
         if(mins < 120 && mins > 100){
-		  userTime = 105*60;
-		  text_time = "105 min";
+		      userTime = 105*60;
+		      text_time = "105 min";
           $('#min-indicator').text('105min');
         }
         if(mins < 100 && mins > 80){
-		  userTime = 110*60;
-		  text_time = "110 min";
+		      userTime = 110*60;
+		      text_time = "110 min";
           $('#min-indicator').text('110min');
         }
         if(mins < 80 && mins > 60){
-		  userTime = 115*60;
-		  text_time = "115 min";
+		      userTime = 115*60;
+		      text_time = "115 min";
           $('#min-indicator').text('115min');
         }
         if(mins < 60){
-		  userTime = 120*60;
-		  text_time = "120 min";
+		      userTime = 120*60;
+		      text_time = "120 min";
           $('#min-indicator').text('120min');
         }
 
@@ -275,12 +229,12 @@ function initializePage() {
   	$('#timer-btn').mouseup(function(e){
   		$('#min-indicator').css('visibility', 'hidden');
       $('#nurture-btn').addClass("button-glow");
+      $('.ground').addClass('groundslide');
   	});
 
 
-  	//Default Timer Setting (No time set by user)
-	   $('#nurture-btn').click( function(e){
-
+  	//Nurture Button Press
+    $('#nurture-btn').click( function(e){
       $('#nurture-btn').removeClass("button-glow");
 
 		//Start timer
@@ -293,14 +247,17 @@ function initializePage() {
 			if(userTime == null){
 				 startTimer(defaultTime, $('#banner'));
 
-				//Console check
-				console.log("Timer started with default time");
+        //Start slider
+         countdown(defaultTime);
+
+
 			}
 			//Use the time set by user
 			else{
 				startTimer(userTime, $('#banner'));
-				//Console check
-				console.log("Timer started with user time");
+				
+        //Start slider
+         countdown(userTime);
 			}
 
 			//Change words on button
@@ -313,14 +270,19 @@ function initializePage() {
 			timerOn = true;
 		}
 
-    //Stop Timer
+    //'Abandon' Behavior
 		else{
-      //Confirmation screen
+      //Confirmation screen HERE
 
+      //Stop Timer
 			clearInterval(time);
-			//Console check
-			console.log("Timer ended");
-			//Change words on button
+      
+      //Stop slider countdown
+      $('#progressTimer').stop();
+      $('#timer-btn').stop();
+      $('#progressTimer').removeClass('barbershop');
+			
+			//Reset words on button
 			$('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 
 			timerOn = false;
@@ -330,6 +292,7 @@ function initializePage() {
 	);
 
 }
+
 
 
 /*Timer functionality*/
@@ -353,7 +316,7 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.html(minutes + ":" + seconds + "\n remaining"); 
+        display.html(minutes + ":" + seconds + "\n remaining");
 
         if (diff <= 0) {
             // add one second so that the count down starts at the full duration
@@ -368,15 +331,15 @@ function startTimer(duration, display) {
           clearInterval(time);
 
           //Set Banner Text
-		  $('#banner').html('Time is up!');
-		  console.log(text_time);
+		      $('#banner').html('Time is up!');
+		      console.log(text_time);
 
           //Reset Button functionality
           $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
-		  timerOn = false;
+		      timerOn = false;
 		  
-		  //push plant grown info into json/mygarden page
-		  //var text_time, 
+		      //push plant grown info into json/mygarden page
+		      //var text_time, 
 
 			//add to garden screen
 			$(".addToGardenScreen").show("slow");
@@ -392,7 +355,7 @@ function startTimer(duration, display) {
 				plantData.plants.push({"name": name, "image": image,
 				"date": date, "time": text_time})
 				response.render('mygarden', plantData);
-			
+	
 
 		}
     };
@@ -402,24 +365,11 @@ function startTimer(duration, display) {
     time = setInterval(timer, 1000);
 }
 
-function manualUserInput(){
-  var str = document.getElementById("userInput").value;
 
-  //Check if input is numerical value
-  if( Number.isInteger(parseInt(str) ) ){
-    userTime = str * 60;
+//Time-based countdown
+function countdown(timeleft){
+    $('#progressTimer').animate({ height: "0px"}, timeleft * 1000, "linear");
+    $('#progressTimer').addClass('barbershop');
 
-    $("#userInputScreen").toggle("medium");
-    $('#hourglass-btn').removeClass("hourglass-glow");
-    $('#nurture-btn').addClass("button-glow");
-
-  }
-  //If not numerical value, notify user
-  else{
-    $('userInput').css('border', '1px solid red');
-  }
-}
-
-function cancelUI(){
-  $("#userInputScreen").toggle("medium");
+    $('#timer-btn').animate({top: "515px"}, timeleft * 950, "linear");
 }
