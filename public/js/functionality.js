@@ -63,7 +63,11 @@ function initializePage() {
 
 	//Draggable timer-btn
 	$( function() {
-    	$( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
+
+      if(timerOn == false){
+    	   $( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
+      }
+
   	});
 
 
@@ -235,6 +239,7 @@ function initializePage() {
         //Start slider
          countdown(defaultTime);
 
+
 			}
 			//Use the time set by user
 			else{
@@ -264,6 +269,7 @@ function initializePage() {
       //Stop slider countdown
       $('#progressTimer').stop();
       $('#timer-btn').stop();
+      $('#progressTimer').removeClass('barbershop');
 			
 			//Reset words on button
 			$('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
