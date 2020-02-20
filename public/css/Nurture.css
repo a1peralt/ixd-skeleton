@@ -310,12 +310,29 @@ a:hover{
 	margin-bottom: 90px;
 }
 
+#History{
+	/*Positioning*/
+	position: absolute;
+	left:30px;
+	top:290px;
+}
 
 .summary{
 	position: absolute;
 	
 }
 
+#bkgplant{
+	position: absolute;
+	left:30px;
+	top:290px;	
+	width:80px;
+	height:80px;
+
+	border-radius: 100%;
+	background-color: rgb(231, 241, 250);
+	filter: opacity(0.8);
+}
 
 #hourglass-btn{
 	background-image:url("https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hourglass.png");
@@ -323,9 +340,9 @@ a:hover{
 
 	/*Positioning*/
 	position:absolute;
-	left:308.5px;
+	left:309.5px;
 	top: 565.5px;
-	z-index: 2;
+	z-index: 0;
 
 	/*Appearance*/
 	width: 50px;
@@ -333,7 +350,19 @@ a:hover{
 	border: 1px solid black;
 	border-radius: 100%;
 
-	z-index: 1;
+	z-index: 0;
+}
+
+#hourglass-alert{
+	width: 120px;
+	line-height: 20px;
+	position: absolute;
+	font-size: 18px;
+	vertical-align: middle;
+	text-align: left;
+	left:185px;
+	top:555px;
+	color:white;
 }
 
 #userInputScreen{
@@ -373,31 +402,6 @@ a:hover{
 	color:black;
 	font-size: 18px;
 }
-
-.addToGardenScreen {
-	position: absolute;
-	width: 280px;
-	height: 100px;
-	color: #ffffff;
-
-	padding-top: 10px;
-	top: 50%;
-	left: 50%;
-  }
-  
-  .addToGardenScreen.is-visible {
-	opacity: 1;
-  }
-  
-  .addScreen-container {
-	transform: translateY(-40px);
-	transition-property: transform;
-	transition-duration: 0.3s;
-  }
-  
-  .is-visible .addScreen-container {
-	transform: translateY(0);
-  }
 
 #confirmation{
 	text-align: center;

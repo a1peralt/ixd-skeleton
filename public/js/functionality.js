@@ -16,8 +16,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $(".panel").hide();
     $(".planted").hide();
-	$("#inactivator").hide();
-	$(".addToGardenScreen").hide();
+    $("#inactivator").hide();
 
   $("#hamburger").click(function() {
           
@@ -44,6 +43,19 @@ $(document).ready(function() {
     $("#inactivator").hide(1);
   })
 
+  //Toggle hourglass 
+  $("#hourglass-alert").hide();
+
+  $("#hourglass-btn").click(function(){
+    if(timerOn == false){
+      $("#hourglass-alert").show(1);
+      setTimeout(function() {
+        $('#hourglass-alert').hide(1);
+      }, 3000);
+    }
+  });
+
+
     //Inactivator
   $('#inactivator').click(function() {
     $("#hamWords").toggle("slow");
@@ -52,16 +64,6 @@ $(document).ready(function() {
     $(".panel").toggle("slow");
     $("#inactivator").hide(1);
   });
-
-
-  //User input screen
-  
-  /*$("#userInputScreen").hide();
-  $("#hourglass-btn").click(function() {
-          $("#userInputScreen").toggle("medium");
-          $("#userInputScreen").show();
-          $('#userInput').focus();
-        });*/
 
 })
 
@@ -74,23 +76,21 @@ function initializePage() {
 
 	//Draggable timer-btn
 	$( function() {
-
-      if(timerOn == false){
-    	   $( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
-      }
-
+    	$( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
   	});
 
 
 	//Show minute indicator
   	$('#timer-btn').mousedown( function(e){
-  		$('#min-indicator').css('visibility', 'visible');
+
+      $('#min-indicator').css('visibility', 'visible');
       $('#progressTimer').css('visibility', 'visible');
 
   		//Get draggable location
   		$('#timer-btn').mousemove(function(){
   			mins = parseInt( $('#timer-btn').css('top'), 10 );
 
+  		  //For the barbershop animation
         var height = 530-mins;
         $('#progressTimer').css('height', height+'px');
 
@@ -228,56 +228,72 @@ function initializePage() {
   	//Hide minute indicator
   	$('#timer-btn').mouseup(function(e){
   		$('#min-indicator').css('visibility', 'hidden');
-      $('#nurture-btn').addClass("button-glow");
+
+  		if(timerOn == false){
+  			$('#nurture-btn').addClass("button-glow");
+  		}
+      	
       $('.ground').addClass('groundslide');
   	});
 
 
   	//Nurture Button Press
     $('#nurture-btn').click( function(e){
+
+      //Stop Glow
       $('#nurture-btn').removeClass("button-glow");
 
-		//Start timer
-		if(timerOn == false){
+      //Hides hourglass alert if opened when nurture button is pressed
+      $("#hourglass-alert").hide();
 
-      //Update text
-      $('#banner').css('fontSize','60px');
-			
-			//Start timer with default time
-			if(userTime == null){
-				 startTimer(defaultTime, $('#banner'));
+		  //Start timer
+		  if(timerOn == false){
 
-        //Start slider
-         countdown(defaultTime);
+        //Disable draggable slider
+        $('#timer-btn').draggable('disable');
 
+        //Update text
+      	$('#banner').css('fontSize','60px');
 
-			}
-			//Use the time set by user
-			else{
-				startTimer(userTime, $('#banner'));
+        //Start timer with default time
+        if(userTime == null){
+				  startTimer(defaultTime, $('#banner'));
+
+        	//Start slider
+        	countdown(defaultTime);
+        }
+
+        //Start timer with time set by user
+        else{
+
+          startTimer(userTime, $('#banner'));
 				
-        //Start slider
-         countdown(userTime);
-			}
+          //Start slider
+         	countdown(userTime);
+         }
 
-			//Change words on button
-			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
-			//show the planted plant image
-			$('.planted').show();
-			//hide the hand plant
-			$('.hands-img').hide();
+  			//Change words on button
+  			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
+  			//show the planted plant image
+  			$('.planted').show();
+  			//hide the hand plant
+  			$('.hands-img').hide();
 
-			timerOn = true;
-		}
+        timerOn = true;
+
+		  }
 
     //'Abandon' Behavior
 		else{
-      //Confirmation screen HERE
+			//Confirmation screen HERE
+
+			//Disable draggable slider
+			$('#timer-btn').draggable('enable');
 
       //Stop Timer
-			clearInterval(time);
+      clearInterval(time);
       
-      //Stop slider countdown
+      //Stop slider countdown animation
       $('#progressTimer').stop();
       $('#timer-btn').stop();
       $('#progressTimer').removeClass('barbershop');
@@ -287,9 +303,8 @@ function initializePage() {
 
 			timerOn = false;
 		}
-	}
 
-	);
+	});
 
 }
 
@@ -341,23 +356,30 @@ function startTimer(duration, display) {
 		      //push plant grown info into json/mygarden page
 		      //var text_time, 
 
-			//add to garden screen
-			$(".addToGardenScreen").show("slow");
+			   var fs = require('../plantData.json');
+			   console.log("hello");
 
-			//if click yes
-			//push text_time, image, name, date
-			var name = "filler";
-			var image = "#";
-			var date = "filler";
-			var plantData = require('../plantData.json');
 
-				console.log(plantData);
-				plantData.plants.push({"name": name, "image": image,
-				"date": date, "time": text_time})
-				response.render('mygarden', plantData);
-	
+         fs.readFile('../plantData.json', 'utf-8', function(err, data) {
+				    if (err) throw err;
 
-		}
+  				  var data = JSON.parse(data);
+  				    data.plantData.push({
+  					   name : "filler",
+  					   image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
+  					   date : "filler",
+  					   time : text_time
+  				  });
+
+				    console.log(data);
+
+				    fs.writeFile('../plantData.json', JSON.stringify(data), 'utf-8', function(err) {
+
+              if (err) throw err;
+              console.log('Done!');
+				    });
+			   });
+		    }
     };
 
     //Start timer immediately
