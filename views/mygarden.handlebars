@@ -13,6 +13,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/Nurture.css" rel="stylesheet">
+    <link href="/css/myGarden.css" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
@@ -71,9 +72,8 @@
                     {{#each plants}}
                         <div class="plants">
                             <div>
-                            <img src = {{image}} style= "float: right;" class="img-responsive" >
                         
-                                <p>
+                                <p> <img src = {{image}} class="img-responsive" style = "float: left;"> 
                                     {{name}}
                                     {{date}}         
                                     {{time}}
@@ -82,7 +82,7 @@
                                 
 
                             </div>
-                            </div>
+                        </div>
                     
                     {{/each}}
                 

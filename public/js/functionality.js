@@ -18,7 +18,8 @@ $(document).ready(function() {
     $("#cross").hide();
     $(".panel").hide();
     $(".planted").hide();
-    $("#inactivator").hide();
+	$("#inactivator").hide();
+	$(".addToGardenScreen").hide();
 
   $("#hamburger").click(function() {
           
@@ -56,8 +57,8 @@ $(document).ready(function() {
 
 
   //User input screen
-  /*
-  $("#userInputScreen").hide();
+  
+  /*$("#userInputScreen").hide();
   $("#hourglass-btn").click(function() {
           $("#userInputScreen").toggle("medium");
           $("#userInputScreen").show();
@@ -377,27 +378,22 @@ function startTimer(duration, display) {
 		  //push plant grown info into json/mygarden page
 		  //var text_time, 
 
-			var fs = require('../plantData.json');
-			console.log("hello");
+			//add to garden screen
+			$(".addToGardenScreen").show("slow");
 
-			fs.readFile('../plantData.json', 'utf-8', function(err, data) {
-				if (err) throw err
+			//if click yes
+			//push text_time, image, name, date
+			var name = "filler";
+			var image = "#";
+			var date = "filler";
+			var plantData = require('../plantData.json');
 
-				var data = JSON.parse(data);
-				data.plantData.push({
-					name : "filler",
-					image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
-					date : "filler",
-					time : text_time
-				});
+				console.log(plantData);
+				plantData.plants.push({"name": name, "image": image,
+				"date": date, "time": text_time})
+				response.render('mygarden', plantData);
+			
 
-				console.log(data);
-
-				fs.writeFile('../plantData.json', JSON.stringify(data), 'utf-8', function(err) {
-					if (err) throw err
-					console.log('Done!');
-				});
-			});
 		}
     };
 
