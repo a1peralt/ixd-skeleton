@@ -16,8 +16,7 @@ $(document).ready(function() {
     $("#cross").hide();
     $(".panel").hide();
     $(".planted").hide();
-	$("#inactivator").hide();
-	$(".addToGardenScreen").hide();
+    $("#inactivator").hide();
 
   $("#hamburger").click(function() {
           
@@ -44,6 +43,14 @@ $(document).ready(function() {
     $("#inactivator").hide(1);
   })
 
+  //Toggle hourglass 
+  $("#hourglass-alert").hide();
+
+  $("#hourglass-btn").click(function(){
+	$("#hourglass-alert").toggle("slow");
+  })
+
+
     //Inactivator
   $('#inactivator').click(function() {
     $("#hamWords").toggle("slow");
@@ -52,16 +59,6 @@ $(document).ready(function() {
     $(".panel").toggle("slow");
     $("#inactivator").hide(1);
   });
-
-
-  //User input screen
-  
-  /*$("#userInputScreen").hide();
-  $("#hourglass-btn").click(function() {
-          $("#userInputScreen").toggle("medium");
-          $("#userInputScreen").show();
-          $('#userInput').focus();
-        });*/
 
 })
 
@@ -74,11 +71,7 @@ function initializePage() {
 
 	//Draggable timer-btn
 	$( function() {
-
-      if(timerOn == false){
-    	   $( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
-      }
-
+    	$( "#timer-btn" ).draggable( {axis: 'y', containment: [0,40,0,505]});
   	});
 
 
@@ -216,9 +209,9 @@ function initializePage() {
           $('#min-indicator').text('115min');
         }
         if(mins < 60){
-		      userTime = 30; //Change back to 120*60
-		      text_time = "30sec";
-          $('#min-indicator').text('30sec');
+		      userTime = 120*60;
+		      text_time = "120 min";
+          $('#min-indicator').text('120min');
         }
 
   		});
@@ -235,7 +228,10 @@ function initializePage() {
 
   	//Nurture Button Press
     $('#nurture-btn').click( function(e){
-      $('#nurture-btn').removeClass("button-glow");
+	  $('#nurture-btn').removeClass("button-glow");
+
+	  //Hides hourglass alert if opened when nurture button is pressed
+	  $("#hourglass-alert").hide();
 
 		//Start timer
 		if(timerOn == false){
@@ -249,7 +245,6 @@ function initializePage() {
 
         //Start slider
          countdown(defaultTime);
-
 
 			}
 			//Use the time set by user
@@ -268,6 +263,7 @@ function initializePage() {
 			$('.hands-img').hide();
 
 			timerOn = true;
+
 		}
 
     //'Abandon' Behavior
@@ -280,7 +276,6 @@ function initializePage() {
       //Stop slider countdown
       $('#progressTimer').stop();
       $('#timer-btn').stop();
-      $('#progressTimer').removeClass('barbershop');
 			
 			//Reset words on button
 			$('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
@@ -341,22 +336,27 @@ function startTimer(duration, display) {
 		      //push plant grown info into json/mygarden page
 		      //var text_time, 
 
-			//add to garden screen
-			$(".addToGardenScreen").show("slow");
+			   var fs = require('../plantData.json');
+			   console.log("hello");
 
-			//if click yes
-			//push text_time, image, name, date
-			var name = "filler";
-			var image = "#";
-			var date = "filler";
-			var plantData = require('../plantData.json');
+			   fs.readFile('../plantData.json', 'utf-8', function(err, data) {
+				    if (err) throw err
 
-				console.log(plantData);
-				plantData.plants.push({"name": name, "image": image,
-				"date": date, "time": text_time})
-				response.render('mygarden', plantData);
-	
+				  var data = JSON.parse(data);
+				    data.plantData.push({
+					   name : "filler",
+					   image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
+					   date : "filler",
+					   time : text_time
+				  });
 
+				  console.log(data);
+
+				fs.writeFile('../plantData.json', JSON.stringify(data), 'utf-8', function(err) {
+					if (err) throw err
+					console.log('Done!');
+				});
+			});
 		}
     };
 
