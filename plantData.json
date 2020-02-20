@@ -1,7 +1,7 @@
 {
     "plants" : [
          {
-            "name" : "tomato plant",
+            "name" : "tomato",
             "image" : "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/Tomato.png?raw=true",
             "date" : "1/2/2020",
             "time" : "35 min" 

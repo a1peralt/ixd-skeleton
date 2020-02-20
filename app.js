@@ -52,6 +52,9 @@ app.get('/guest/home', nurture.guest);
 
 
 app.get('/mygarden', mygarden.view);
+app.get('/logged/home/addPlant', mygarden.addPlant);
+
+app.get('/')
 app.get('/login', login.view);
 
 

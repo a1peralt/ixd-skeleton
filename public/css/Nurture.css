@@ -303,36 +303,22 @@ a:hover{
 	height:50px;	
 }
 
+<<<<<<< HEAD
+=======
 .plants{
 	width: 80px;
 	height:80px;
 	left: 50px;
 	margin-bottom: 90px;
 }
+>>>>>>> origin/master
 
-#History{
-	/*Positioning*/
-	position: absolute;
-	left:30px;
-	top:290px;
-}
 
 .summary{
 	position: absolute;
 	
 }
 
-#bkgplant{
-	position: absolute;
-	left:30px;
-	top:290px;	
-	width:80px;
-	height:80px;
-
-	border-radius: 100%;
-	background-color: rgb(231, 241, 250);
-	filter: opacity(0.8);
-}
 
 #hourglass-btn{
 	background-image:url("https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hourglass.png");
@@ -390,6 +376,31 @@ a:hover{
 	color:black;
 	font-size: 18px;
 }
+
+.addToGardenScreen {
+	position: absolute;
+	width: 280px;
+	height: 100px;
+	color: #ffffff;
+
+	padding-top: 10px;
+	top: 50%;
+	left: 50%;
+  }
+  
+  .addToGardenScreen.is-visible {
+	opacity: 1;
+  }
+  
+  .addScreen-container {
+	transform: translateY(-40px);
+	transition-property: transform;
+	transition-duration: 0.3s;
+  }
+  
+  .is-visible .addScreen-container {
+	transform: translateY(0);
+  }
 
 #confirmation{
 	text-align: center;
