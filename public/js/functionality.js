@@ -47,8 +47,13 @@ $(document).ready(function() {
   $("#hourglass-alert").hide();
 
   $("#hourglass-btn").click(function(){
-	$("#hourglass-alert").toggle("slow");
-  })
+    if(timerOn == false){
+      $("#hourglass-alert").show(1);
+      setTimeout(function() {
+        $('#hourglass-alert').hide(1);
+      }, 3000);
+    }
+  });
 
 
     //Inactivator
@@ -77,13 +82,15 @@ function initializePage() {
 
 	//Show minute indicator
   	$('#timer-btn').mousedown( function(e){
-  		$('#min-indicator').css('visibility', 'visible');
+
+      $('#min-indicator').css('visibility', 'visible');
       $('#progressTimer').css('visibility', 'visible');
 
   		//Get draggable location
   		$('#timer-btn').mousemove(function(){
   			mins = parseInt( $('#timer-btn').css('top'), 10 );
 
+  		  //For the barbershop animation
         var height = 530-mins;
         $('#progressTimer').css('height', height+'px');
 
@@ -221,70 +228,83 @@ function initializePage() {
   	//Hide minute indicator
   	$('#timer-btn').mouseup(function(e){
   		$('#min-indicator').css('visibility', 'hidden');
-      $('#nurture-btn').addClass("button-glow");
+
+  		if(timerOn == false){
+  			$('#nurture-btn').addClass("button-glow");
+  		}
+      	
       $('.ground').addClass('groundslide');
   	});
 
 
   	//Nurture Button Press
     $('#nurture-btn').click( function(e){
-	  $('#nurture-btn').removeClass("button-glow");
 
-	  //Hides hourglass alert if opened when nurture button is pressed
-	  $("#hourglass-alert").hide();
+      //Stop Glow
+      $('#nurture-btn').removeClass("button-glow");
 
-		//Start timer
-		if(timerOn == false){
+      //Hides hourglass alert if opened when nurture button is pressed
+      $("#hourglass-alert").hide();
 
-      //Update text
-      $('#banner').css('fontSize','60px');
-			
-			//Start timer with default time
-			if(userTime == null){
-				 startTimer(defaultTime, $('#banner'));
+		  //Start timer
+		  if(timerOn == false){
 
-        //Start slider
-         countdown(defaultTime);
+        //Disable draggable slider
+        $('#timer-btn').draggable('disable');
 
-			}
-			//Use the time set by user
-			else{
-				startTimer(userTime, $('#banner'));
+        //Update text
+      	$('#banner').css('fontSize','60px');
+
+        //Start timer with default time
+        if(userTime == null){
+				  startTimer(defaultTime, $('#banner'));
+
+        	//Start slider
+        	countdown(defaultTime);
+        }
+
+        //Start timer with time set by user
+        else{
+
+          startTimer(userTime, $('#banner'));
 				
-        //Start slider
-         countdown(userTime);
-			}
+          //Start slider
+         	countdown(userTime);
+         }
 
-			//Change words on button
-			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
-			//show the planted plant image
-			$('.planted').show();
-			//hide the hand plant
-			$('.hands-img').hide();
+  			//Change words on button
+  			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
+  			//show the planted plant image
+  			$('.planted').show();
+  			//hide the hand plant
+  			$('.hands-img').hide();
 
-			timerOn = true;
+        timerOn = true;
 
-		}
+		  }
 
     //'Abandon' Behavior
 		else{
-      //Confirmation screen HERE
+			//Confirmation screen HERE
+
+			//Disable draggable slider
+			$('#timer-btn').draggable('enable');
 
       //Stop Timer
-			clearInterval(time);
+      clearInterval(time);
       
-      //Stop slider countdown
+      //Stop slider countdown animation
       $('#progressTimer').stop();
       $('#timer-btn').stop();
+      $('#progressTimer').removeClass('barbershop');
 			
 			//Reset words on button
 			$('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 
 			timerOn = false;
 		}
-	}
 
-	);
+	});
 
 }
 
@@ -339,25 +359,27 @@ function startTimer(duration, display) {
 			   var fs = require('../plantData.json');
 			   console.log("hello");
 
-			   fs.readFile('../plantData.json', 'utf-8', function(err, data) {
-				    if (err) throw err
 
-				  var data = JSON.parse(data);
-				    data.plantData.push({
-					   name : "filler",
-					   image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
-					   date : "filler",
-					   time : text_time
-				  });
+         fs.readFile('../plantData.json', 'utf-8', function(err, data) {
+				    if (err) throw err;
 
-				  console.log(data);
+  				  var data = JSON.parse(data);
+  				    data.plantData.push({
+  					   name : "filler",
+  					   image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
+  					   date : "filler",
+  					   time : text_time
+  				  });
 
-				fs.writeFile('../plantData.json', JSON.stringify(data), 'utf-8', function(err) {
-					if (err) throw err
-					console.log('Done!');
-				});
-			});
-		}
+				    console.log(data);
+
+				    fs.writeFile('../plantData.json', JSON.stringify(data), 'utf-8', function(err) {
+
+              if (err) throw err;
+              console.log('Done!');
+				    });
+			   });
+		    }
     };
 
     //Start timer immediately
