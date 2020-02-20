@@ -205,9 +205,9 @@ function initializePage() {
           $('#min-indicator').text('115min');
         }
         if(mins < 60){
-		      userTime = 120*60;
-		      text_time = "120 min";
-          $('#min-indicator').text('120min');
+		      userTime = 30; //Change back to 120*60
+		      text_time = "30sec";
+          $('#min-indicator').text('30sec');
         }
 
   		});
