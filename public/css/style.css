@@ -1,9 +1,9 @@
 body{
 	margin: 0;
 	padding: 0;
-	background-image: url("https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Ground.png");
+	background-image: url("https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/new_bg.png");
 	background-size: cover;
-	background-position: center;
+	background-position: bottom;
 	font-family: sans-serif;
 }
 
@@ -64,7 +64,7 @@ h1{
 	border: none;
 	outline: none;
 	height: 40px;
-	background: #49A010;
+	background: #55C204;
 	color: #fff
 	font-size: 18px;
 	border-radius: 20px;
@@ -73,7 +73,7 @@ h1{
 .loginbox input[type="submit"]:hover
 {
 	cursor: pointer;
-	background: #8FD660;
+	background: #55C204;
 	color: #000;
 }
 
