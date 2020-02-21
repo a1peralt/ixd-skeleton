@@ -27,10 +27,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 
 </head>
-<body>
-
-	<div class="screen">
-
+<body style="overflow:auto;
+	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
+	background-position: 0px 1000px;
+	background-attachment: fixed;">
 
 	<div id="inactivator"></div>
 
@@ -73,7 +73,9 @@
                         
                                 <p> <img src = {{image}} class="img-responsive" style = "float: left;"> 
                                     {{name}}
-                                    {{date}}         
+                                    <br>
+                                    {{date}}
+                                    <br>         
                                     {{time}}
                                    
                                 </p>
@@ -86,7 +88,6 @@
                 
 
         </div>
-    </div>
     </div>
 
 </body>

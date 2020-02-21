@@ -8,7 +8,7 @@ exports.view = function(request, response) {
 
 exports.addPlant = function(request, response) {
     console.log(plantData);
-    plantData.plants.push({"name": request.query.name, "image": "#",
-    "date": request.query.date, "time": request.query.date})
+    plantData.plants.push({"name": request.query.name, "image": request.query.image,
+    "date": request.query.date, "time": request.query.time})
     response.render('mygarden', plantData);
 }

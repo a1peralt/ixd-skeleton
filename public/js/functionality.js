@@ -68,12 +68,17 @@ $(document).ready(function() {
   });
 
   //add to garden screen
-  $('#no-btn').click(function() {
+  $('#no').click(function() {
     $(".addToGardenScreen").hide();
+  });
+
+  
+  //confirmation screen
+  $('#no-btn').click(function() {
     $("#confirmation-screen").hide();
   });
 
-})
+});
 
 /*
  * Function that is called when the document is ready.
@@ -224,12 +229,12 @@ function initializePage() {
           $('#min-indicator').text('115min');
         }
         if(mins < 60){
-		      userTime = 120*60;
+		      userTime = 120*60; //Change back to 120*60
 		      text_time = "120 min";
           $('#min-indicator').text('120min');
-              userTime = 5; //Change back to 120*60
-              text_time = "5sec";
-              $('#min-indicator').text('5sec');
+          userTime = 5; 
+          text_time = "5sec";
+          $('#min-indicator').text('5sec');
     
         }
 
@@ -365,20 +370,15 @@ function startTimer(duration, display) {
           //Reset Button functionality
           $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 		      timerOn = false;
-		  
+      
+          $(".addToGardenScreen").toggle("fast");
+
+
 		      //push plant grown info into json/mygarden page
-		      //var text_time, 
-
-            var name = "name";
-            var image = "#";
-            var date = "date";
-
-            //if click yes, then add to garden screen
-            $(".addToGardenScreen").show("slow");
-
-
-
-
+          $('#plantName').val("Flower");
+          $('#plantPic').val("https://pics.clipartpng.com/midle/Tropical_Flower_PNG_Clipart-194.png");
+          $('#plantTime').val(text_time);
+          $('#plantDate').val('Today');
 
 		    }
     };

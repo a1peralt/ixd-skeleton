@@ -23,6 +23,19 @@
 <body>
 	<img id="sky" class="timelapse" src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png" width="100%">
 
+	<div class="JSON">
+
+		<form id="plants" role="form" method="get" action="/logged/home/addPlant">
+
+		<input name=name  id=plantName></input>
+		<input name=image id=plantPic></input>
+		<input name=time  id=plantTime></input>
+		<input name=date  id=plantDate></input>
+
+		</form>
+
+	</div>
+
 	<div id="inactivator"></div>
 
 			<div id ="hamburger">
@@ -80,6 +93,7 @@
 					Nurture <img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true" class="heart-img" />
 			</button>
 
+
 			<div class="btn-back">
 
 				<br>
@@ -101,8 +115,8 @@
 
 						<br>
 
-						<button id="yes-btn"> Yes </button>
-						<button id="no-btn"> No </button>
+						<button form = "plants" id="yes"> Yes </button>
+						<button id="no"> No </button>
 			</div> <!-- addToGardenScreen -->
 
 		<div id="confirmation-screen">
