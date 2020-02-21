@@ -414,24 +414,23 @@ a:hover{
 .addToGardenScreen {
 	border:3px solid green;
 	background-color: white;
+}
 	
 #confirmation-screen{
 	background-color: white;
-	border:1px solid #000000;
-	border-radius: 15px;
-
-	position: absolute;
-	width: 280px;
-	height: 100px;
-	color: #ffffff;
-
-	padding-top: 10px;
-	top: 50%;
-	left: 50%;
-
-
-	transform: translate(-50%,-50%);
-	z-index: 3;
+    border: 3px solid #329616;
+    border-radius: 15px;
+    position: absolute;
+    width: 280px;
+    /* height: 100px; */
+    color: #000000;
+    text-align: center;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    font-size: x-large;
   }
 
   .addScreen-container {
