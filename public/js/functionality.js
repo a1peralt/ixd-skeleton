@@ -6,6 +6,8 @@ var time;
 var mins;
 var text_time;
 
+var toggleSpeed = 100;
+
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -23,7 +25,7 @@ $(document).ready(function() {
 
   $("#hamburger").click(function() {
           
-    $("#hamWords").toggle(4);
+    $("#hamWords").toggle();
     $("#hamburger").hide();
     $("#cross").show();
     $(".panel").toggle(4);
@@ -251,6 +253,7 @@ function initializePage() {
   		}
       	
       $('.ground').addClass('groundslide');
+      $('.hands-img').hide('slow');
   	});
 
 
@@ -272,22 +275,11 @@ function initializePage() {
         //Update text
       	$('#banner').css('fontSize','60px');
 
-        //Start timer with default time
-        if(userTime == null){
-				  startTimer(defaultTime, $('#banner'));
-
-        	//Start slider
-        	countdown(defaultTime);
-        }
-
         //Start timer with time set by user
-        else{
-
-          startTimer(userTime, $('#banner'));
+        startTimer(userTime, $('#banner'));
 				
-          //Start slider
-         	countdown(userTime);
-         }
+        //Start slider
+        countdown(userTime);
 
   			//Change words on button
   			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
@@ -305,21 +297,41 @@ function initializePage() {
       //Confirmation screen HERE
       $("#confirmation-screen").show();
 
-			//Disable draggable slider
-			$('#timer-btn').draggable('enable');
+      $('#yes-btn').click( function(){
 
-      //Stop Timer
-      clearInterval(time);
+        //Enable draggable slider
+        $('#timer-btn').draggable('enable');
+
+        //Stop Timer
+        clearInterval(time);
+
+        //Stop slider countdown animation
+        $('#progressTimer').stop();
+        $('#timer-btn').stop();
+        $('#progressTimer').removeClass('barbershop');
       
-      //Stop slider countdown animation
-      $('#progressTimer').stop();
-      $('#timer-btn').stop();
-      $('#progressTimer').removeClass('barbershop');
-			
-			//Reset words on button
-			$('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
+        //Reset words on button
+        $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 
-			timerOn = false;
+        timerOn = false;
+
+        //Hide
+        $("#confirmation-screen").hide(50);
+
+
+        //Reset banner
+        $('#banner').css('fontSize','65px');
+        $('#banner').html('Set how long you\'d like to nurture');
+
+        //Reset pics
+        $('.planted').hide();
+
+      });
+
+      $('#no-btn').click( function(){
+        //Hide confirmation screen and do nothing
+        $("#confirmation-screen").hide(50);
+      });
 		}
 
 	});
