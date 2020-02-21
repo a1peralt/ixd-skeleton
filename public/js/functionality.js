@@ -67,6 +67,12 @@ $(document).ready(function() {
     $("#inactivator").hide(1);
   });
 
+  //add to garden screen
+  $('#no-btn').click(function() {
+    $(".addToGardenScreen").hide();
+    $("#confirmation-screen").hide();
+  });
+
 })
 
 /*
@@ -292,7 +298,7 @@ function initializePage() {
     //'Abandon' Behavior
 		else{
       //Confirmation screen HERE
-      $("#confirmation-screen").show(50);
+      $("#confirmation-screen").show();
 
 			//Disable draggable slider
 			$('#timer-btn').draggable('enable');
@@ -370,40 +376,10 @@ function startTimer(duration, display) {
             //if click yes, then add to garden screen
             $(".addToGardenScreen").show("slow");
 
-            var plantData = require('../../plantData.json');
-            console.log(plantData);
 
 
-            $("#0").click(function(e) {
-              $.post(
-                {
-                    "name" : name,
-                    "image" : image,
-                    "date" : date,
-                    "time" : text_time
-                },
-                addPlant)
-            });
 
-            function addPlant(result){
-              console.log(result);
-              var toAdd = '<a href="#0">' +
-              '<img src="' + result['image'] + '" class="img">' +
-              '<p>' + result['name'] + '</p>' +
-              '<p>' + result['date'] + '</p>' +
-              '<p>' + result['time'] +
-              '</p></a>';
-            
-            }
 
-            $("#1").click(function() {
-              $(".addToGardenScreen").hide();
-            });
-
-                /*
-                plantData.plants.push({"name": name, "image": image,
-               "date": date, "time": text_time})
-               response.render('mygarden', plantData);*/
 		    }
     };
 
