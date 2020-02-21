@@ -18,6 +18,11 @@ body{
 	bottom: 10px;
 }
 
+
+.JSON{
+	display: none;
+}
+
 .panel{
 	/*Positioning*/
 	position: absolute;

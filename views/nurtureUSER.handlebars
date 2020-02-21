@@ -23,6 +23,19 @@
 <body>
 	<img id="sky" class="timelapse" src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png" width="100%">
 
+	<div class="JSON">
+
+		<form id="plants" role="form" method="get" action="/logged/home/addPlant">
+
+		<input name=name  id=plantName></input>
+		<input name=image id=plantPic></input>
+		<input name=time  id=plantTime></input>
+		<input name=date  id=plantDate></input>
+
+		</form>
+
+	</div>
+
 	<div id="inactivator"></div>
 
 			<div id ="hamburger">
@@ -79,6 +92,8 @@
 			<button id="nurture-btn" style= "margin:auto;">
 					Nurture <img src="https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true" class="heart-img" />
 			</button>
+
+			<button form="plants"> Add plant </button>
 
 			<div class="btn-back">
 

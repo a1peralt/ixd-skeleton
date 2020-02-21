@@ -218,12 +218,12 @@ function initializePage() {
           $('#min-indicator').text('115min');
         }
         if(mins < 60){
-		      userTime = 120*60;
+		      userTime = 120*60; //Change back to 120*60
 		      text_time = "120 min";
           $('#min-indicator').text('120min');
-              userTime = 5; //Change back to 120*60
-              text_time = "5sec";
-              $('#min-indicator').text('5sec');
+          userTime = 5; 
+          text_time = "5sec";
+          $('#min-indicator').text('5sec');
     
         }
 
@@ -361,49 +361,11 @@ function startTimer(duration, display) {
 		      timerOn = false;
 		  
 		      //push plant grown info into json/mygarden page
-		      //var text_time, 
+          $('#plantName').val("Flower");
+          $('#plantPic').val("https://pics.clipartpng.com/midle/Tropical_Flower_PNG_Clipart-194.png");
+          $('#plantTime').val(text_time);
+          $('#plantDate').val('Today');
 
-            var name = "name";
-            var image = "#";
-            var date = "date";
-
-            //if click yes, then add to garden screen
-            $(".addToGardenScreen").show("slow");
-
-            var plantData = require('../../plantData.json');
-            console.log(plantData);
-
-
-            $("#0").click(function(e) {
-              $.post(
-                {
-                    "name" : name,
-                    "image" : image,
-                    "date" : date,
-                    "time" : text_time
-                },
-                addPlant)
-            });
-
-            function addPlant(result){
-              console.log(result);
-              var toAdd = '<a href="#0">' +
-              '<img src="' + result['image'] + '" class="img">' +
-              '<p>' + result['name'] + '</p>' +
-              '<p>' + result['date'] + '</p>' +
-              '<p>' + result['time'] +
-              '</p></a>';
-            
-            }
-
-            $("#1").click(function() {
-              $(".addToGardenScreen").hide();
-            });
-
-                /*
-                plantData.plants.push({"name": name, "image": image,
-               "date": date, "time": text_time})
-               response.render('mygarden', plantData);*/
 		    }
     };
 
