@@ -382,6 +382,9 @@ function startTimer(duration, display) {
           $('#progressTimer').stop();
           $('#timer-btn').stop();
           $('#progressTimer').removeClass('barbershop');
+
+          //Enable draggable slider
+          $('#timer-btn').draggable('enable');
       
           $(".addToGardenScreen").toggle("fast");
 
@@ -389,10 +392,6 @@ function startTimer(duration, display) {
           //add to garden screen
           $('#no').click(function() {
             $(".addToGardenScreen").hide();
-
-            //Enable draggable slider
-            $('#timer-btn').draggable('enable');
-
           });
 
 
