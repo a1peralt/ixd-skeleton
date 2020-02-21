@@ -69,11 +69,6 @@ $(document).ready(function() {
     $("#inactivator").hide(1);
   });
 
-  //add to garden screen
-  $('#no').click(function() {
-    $(".addToGardenScreen").hide();
-  });
-
   
   //confirmation screen
   $('#no-btn').click(function() {
@@ -382,8 +377,23 @@ function startTimer(duration, display) {
           //Reset Button functionality
           $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 		      timerOn = false;
+
+          //Stop slider
+          $('#progressTimer').stop();
+          $('#timer-btn').stop();
+          $('#progressTimer').removeClass('barbershop');
       
           $(".addToGardenScreen").toggle("fast");
+
+
+          //add to garden screen
+          $('#no').click(function() {
+            $(".addToGardenScreen").hide();
+
+            //Enable draggable slider
+            $('#timer-btn').draggable('enable');
+
+          });
 
 
 		      //push plant grown info into json/mygarden page
