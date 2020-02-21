@@ -15,36 +15,35 @@ $(document).ready(function() {
 
   //Toggle hamburger
   $("#hamWords").hide();
-    $("#cross").hide();
-    $(".panel").hide();
-    $(".planted").hide();
-    $("#inactivator").hide();
-    $(".addToGardenScreen").hide();
-
-    $("#confirmation-screen").hide();
+  $("#cross").hide();
+  $(".panel").hide();
+  $(".planted").hide();
+  $("#inactivator").hide();
+  $(".addToGardenScreen").hide();
+  $("#confirmation-screen").hide();
 
   $("#hamburger").click(function() {
           
-    $("#hamWords").toggle();
-    $("#hamburger").hide();
-    $("#cross").show();
-    $(".panel").toggle(4);
+    $("#hamWords").show(toggleSpeed);
+    $("#hamburger").hide(toggleSpeed);
+    $("#cross").show(toggleSpeed);
+    $(".panel").toggle(toggleSpeed);
     $("#inactivator").show(1);
   });
 
   $("#cross").click(function(){
-    $("#hamWords").toggle(4);
-    $("#cross").hide();
-    $("#hamburger").show();
-    $(".panel").toggle(4);
+    $("#hamWords").toggle(toggleSpeed);
+    $("#cross").hide(toggleSpeed);
+    $("#hamburger").show(toggleSpeed);
+    $(".panel").toggle(toggleSpeed);
     $("#inactivator").hide(1);
   })
 
   $(".Home").click(function() {
-    $("#hamWords").toggle(4);
-    $("#cross").hide();
-    $("#hamburger").show();
-    $(".panel").toggle(4);
+    $("#hamWords").toggle(toggleSpeed);
+    $("#cross").hide(toggleSpeed);
+    $("#hamburger").show(toggleSpeed);
+    $(".panel").toggle(toggleSpeed);
     $("#inactivator").hide(1);
   })
 
@@ -242,12 +241,13 @@ function initializePage() {
   	//Hide minute indicator
   	$('#timer-btn').mouseup(function(e){
   		$('#min-indicator').css('visibility', 'hidden');
+      $('.ground').addClass('groundslide');
 
   		if(timerOn == false){
   			$('#nurture-btn').addClass("button-glow");
   		}
       	
-      $('.ground').addClass('groundslide');
+      $('.ground').addClass('groundslideUP');
       $('.hands-img').hide('slow');
   	});
 
@@ -389,9 +389,16 @@ function startTimer(duration, display) {
           $(".addToGardenScreen").toggle("fast");
 
 
-          //add to garden screen
+          //Don't add to garden screen
           $('#no').click(function() {
             $(".addToGardenScreen").hide();
+            $('.planted').hide(toggleSpeed);
+            $('.ground').removeClass('groundslide');
+
+            //Reset banner
+            $('#banner').css('fontSize','65px');
+            $('#banner').html('Nurture Again!');
+
           });
 
 
