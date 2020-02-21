@@ -1,0 +1,10 @@
+.plants{
+	width: 100px;
+	height:100px;
+    left: 50px;
+    top: 270px;
+    margin-bottom: 90px;
+    padding: 20px;
+    display: flex;
+}
+

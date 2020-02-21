@@ -16,6 +16,7 @@
 	<script src="/js/jQueryUI.js"></script>
 
 	<script src="/js/functionality.js"></script>
+	<script src="/js/facebook.js"></script>
 
 	<!-- Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
@@ -34,6 +35,10 @@
 			<input type="submit" name="" value="Or Continue As Guest" formaction="/guest/home" formnovalidate>
 			<a href="#"> Lost your password?</a><br>
 			<a href="#"> Don't have an account?</a>
+			<p class="facebookLogin">Login through Facebook
+				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+				</fb:login-button>
+			</p>
 
 		</form>
 

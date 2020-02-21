@@ -17,29 +17,31 @@ $(document).ready(function() {
     $(".panel").hide();
     $(".planted").hide();
     $("#inactivator").hide();
+    $(".addToGardenScreen").hide();
+
 
   $("#hamburger").click(function() {
           
-    $("#hamWords").toggle("slow");
+    $("#hamWords").toggle(4);
     $("#hamburger").hide();
     $("#cross").show();
-    $(".panel").toggle("slow");
+    $(".panel").toggle(4);
     $("#inactivator").show(1);
   });
 
   $("#cross").click(function(){
-    $("#hamWords").toggle("slow");
+    $("#hamWords").toggle(4);
     $("#cross").hide();
     $("#hamburger").show();
-    $(".panel").toggle("slow");
+    $(".panel").toggle(4);
     $("#inactivator").hide(1);
   })
 
   $(".Home").click(function() {
-    $("#hamWords").toggle("slow");
+    $("#hamWords").toggle(4);
     $("#cross").hide();
     $("#hamburger").show();
-    $(".panel").toggle("slow");
+    $(".panel").toggle(4);
     $("#inactivator").hide(1);
   })
 
@@ -58,10 +60,10 @@ $(document).ready(function() {
 
     //Inactivator
   $('#inactivator').click(function() {
-    $("#hamWords").toggle("slow");
+    $("#hamWords").toggle(4);
     $("#cross").hide();
     $("#hamburger").show();
-    $(".panel").toggle("slow");
+    $(".panel").toggle(4);
     $("#inactivator").hide(1);
   });
 
@@ -219,6 +221,10 @@ function initializePage() {
 		      userTime = 120*60;
 		      text_time = "120 min";
           $('#min-indicator').text('120min');
+              userTime = 5; //Change back to 120*60
+              text_time = "5sec";
+              $('#min-indicator').text('5sec');
+    
         }
 
   		});
@@ -356,29 +362,47 @@ function startTimer(duration, display) {
 		      //push plant grown info into json/mygarden page
 		      //var text_time, 
 
-			   var fs = require('../plantData.json');
-			   console.log("hello");
+            var name = "name";
+            var image = "#";
+            var date = "date";
+
+            //if click yes, then add to garden screen
+            $(".addToGardenScreen").show("slow");
+
+            var plantData = require('../../plantData.json');
+            console.log(plantData);
 
 
-         fs.readFile('../plantData.json', 'utf-8', function(err, data) {
-				    if (err) throw err;
+            $("#0").click(function(e) {
+              $.post(
+                {
+                    "name" : name,
+                    "image" : image,
+                    "date" : date,
+                    "time" : text_time
+                },
+                addPlant)
+            });
 
-  				  var data = JSON.parse(data);
-  				    data.plantData.push({
-  					   name : "filler",
-  					   image : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1PC9OA_1iN5uVi4zFsSNIZeH3Q-qERHI5Pg_nUzMZpe1rfBi4",
-  					   date : "filler",
-  					   time : text_time
-  				  });
+            function addPlant(result){
+              console.log(result);
+              var toAdd = '<a href="#0">' +
+              '<img src="' + result['image'] + '" class="img">' +
+              '<p>' + result['name'] + '</p>' +
+              '<p>' + result['date'] + '</p>' +
+              '<p>' + result['time'] +
+              '</p></a>';
+            
+            }
 
-				    console.log(data);
+            $("#1").click(function() {
+              $(".addToGardenScreen").hide();
+            });
 
-				    fs.writeFile('../plantData.json', JSON.stringify(data), 'utf-8', function(err) {
-
-              if (err) throw err;
-              console.log('Done!');
-				    });
-			   });
+                /*
+                plantData.plants.push({"name": name, "image": image,
+               "date": date, "time": text_time})
+               response.render('mygarden', plantData);*/
 		    }
     };
 
