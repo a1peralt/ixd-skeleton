@@ -19,6 +19,7 @@ $(document).ready(function() {
     $("#inactivator").hide();
     $(".addToGardenScreen").hide();
 
+    $("#confirmation-screen").hide();
 
   $("#hamburger").click(function() {
           
@@ -56,7 +57,6 @@ $(document).ready(function() {
       }, 3000);
     }
   });
-
 
     //Inactivator
   $('#inactivator').click(function() {
@@ -291,7 +291,8 @@ function initializePage() {
 
     //'Abandon' Behavior
 		else{
-			//Confirmation screen HERE
+      //Confirmation screen HERE
+      $("#confirmation-screen").show(50);
 
 			//Disable draggable slider
 			$('#timer-btn').draggable('enable');
