@@ -15,36 +15,35 @@ $(document).ready(function() {
 
   //Toggle hamburger
   $("#hamWords").hide();
-    $("#cross").hide();
-    $(".panel").hide();
-    $(".planted").hide();
-    $("#inactivator").hide();
-    $(".addToGardenScreen").hide();
-
-    $("#confirmation-screen").hide();
+  $("#cross").hide();
+  $(".panel").hide();
+  $(".planted").hide();
+  $("#inactivator").hide();
+  $(".addToGardenScreen").hide();
+  $("#confirmation-screen").hide();
 
   $("#hamburger").click(function() {
           
-    $("#hamWords").toggle();
-    $("#hamburger").hide();
-    $("#cross").show();
-    $(".panel").toggle(4);
+    $("#hamWords").show(toggleSpeed);
+    $("#hamburger").hide(toggleSpeed);
+    $("#cross").show(toggleSpeed);
+    $(".panel").toggle(toggleSpeed);
     $("#inactivator").show(1);
   });
 
   $("#cross").click(function(){
-    $("#hamWords").toggle(4);
-    $("#cross").hide();
-    $("#hamburger").show();
-    $(".panel").toggle(4);
+    $("#hamWords").toggle(toggleSpeed);
+    $("#cross").hide(toggleSpeed);
+    $("#hamburger").show(toggleSpeed);
+    $(".panel").toggle(toggleSpeed);
     $("#inactivator").hide(1);
   })
 
   $(".Home").click(function() {
-    $("#hamWords").toggle(4);
-    $("#cross").hide();
-    $("#hamburger").show();
-    $(".panel").toggle(4);
+    $("#hamWords").toggle(toggleSpeed);
+    $("#cross").hide(toggleSpeed);
+    $("#hamburger").show(toggleSpeed);
+    $(".panel").toggle(toggleSpeed);
     $("#inactivator").hide(1);
   })
   $(".MyGarden").click(function() {
@@ -82,11 +81,6 @@ $(document).ready(function() {
     $("#hamburger").show();
     $(".panel").toggle(4);
     $("#inactivator").hide(1);
-  });
-
-  //add to garden screen
-  $('#no').click(function() {
-    $(".addToGardenScreen").hide();
   });
 
   
@@ -262,12 +256,13 @@ function initializePage() {
   	//Hide minute indicator
   	$('#timer-btn').mouseup(function(e){
   		$('#min-indicator').css('visibility', 'hidden');
+      $('.ground').addClass('groundslide');
 
   		if(timerOn == false){
   			$('#nurture-btn').addClass("button-glow");
   		}
       	
-      $('.ground').addClass('groundslide');
+      $('.ground').addClass('groundslideUP');
       $('.hands-img').hide('slow');
   	});
 
@@ -397,6 +392,14 @@ function startTimer(duration, display) {
           //Reset Button functionality
           $('#nurture-btn').html("Nurture <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/heart-color.png?raw=true\" class=\"heart-img\" />");
 		      timerOn = false;
+
+          //Stop slider
+          $('#progressTimer').stop();
+          $('#timer-btn').stop();
+          $('#progressTimer').removeClass('barbershop');
+
+          //Enable draggable slider
+          $('#timer-btn').draggable('enable');
       
           $(".addToGardenScreen").toggle("fast");
           
@@ -408,6 +411,19 @@ function startTimer(duration, display) {
 
           today = yyyy + '/' + mm + '/' + dd;
           console.log(today);
+
+          //Don't add to garden screen
+          $('#no').click(function() {
+            $(".addToGardenScreen").hide();
+            $('.planted').hide(toggleSpeed);
+            $('.ground').removeClass('groundslide');
+
+            //Reset banner
+            $('#banner').css('fontSize','65px');
+            $('#banner').html('Nurture Again!');
+
+          });
+
 
 		      //push plant grown info into json/mygarden page
           $('#plantName').val("Flower");
