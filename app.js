@@ -17,6 +17,8 @@ var settings = require('./routes/settings');
 
 var login = require('./routes/login');
 
+var help = require('./routes/help');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -56,6 +58,8 @@ app.get('/logged/home/addPlant', mygarden.addPlant);
 
 app.get('/')
 app.get('/login', login.view);
+
+app.get('/help', help.view);
 
 
 app.get('/settings/:pageName', settings.view);

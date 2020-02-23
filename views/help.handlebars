@@ -1,0 +1,92 @@
+<!--garden page-->
+<html>
+<head>
+    <style>
+        
+    </style>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>My Garden</title>
+
+    <!--linking js and css-->
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/Nurture.css" rel="stylesheet">
+    <link href="/css/help.css" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="/js/jQueryUI.js"></script>
+
+	<script src="/js/functionality.js"></script>
+
+	<!-- Import Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <script>
+    $(document).ready(function() {
+        initializePage();
+
+        $("#description").hide();
+
+        $("#plantImage" ).click(function() {
+        $("#description" ).toggle();
+
+        });
+
+        $("#close").click(function() {
+            $("#description").hide();
+        });
+    });  
+</script> 
+    
+</head>
+<body style="overflow:auto;
+	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
+	background-position: 0px 1000px;
+	background-attachment: fixed;">
+
+    <script>
+        var number = 0;
+    </script>
+
+	<div id="inactivator"></div>
+
+			<div id ="hamburger">
+			<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger.png" height=50px width=50px>
+			</div>
+
+			<ul id= "cross">
+				<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/x.png" height=50px width=50px>
+			</ul>
+				
+			<div class = "panel">
+
+				<ul id ="hamWords" style="list-style:none; line-height:120px;">
+					<li><a href="/logged/home">Home</a></li>
+					<li><a href="/mygarden">My Garden</a></li> 
+					<li><a href="#">Collaborate</a></li>
+					<li><a class = "Help">Help</a></li>
+					<li><a href="/login">Logout</a></li>
+				</ul>
+			</div>
+				
+
+        <!--adding margins - wait do we want this-->
+        <div class="container">
+
+                <div id="HelpTitle">
+                    Help
+                </div>
+          
+                    
+
+
+        </div>
+
+</body>
+</html>
+

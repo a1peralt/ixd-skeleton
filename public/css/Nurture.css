@@ -73,16 +73,6 @@ body{
 
 }
 
-#MyGardenTitle{
-	width: 250px;
-	line-height: 70px;
-	position: absolute;
-	font-size: 40px;
-	vertical-align: middle;
-	text-align: center;
-	left:60px;
-	top:80px;
-}
 
 #banner{
 	width: 250px;
@@ -225,22 +215,6 @@ body{
 	vertical-align: middle;
 }
 
-#total{
-	/*Positioning*/
-	position: absolute;
-	left:140px;
-	top:170px;
-	width:80px;
-	height:80px;
-
-	border-radius: 100%;
-	background-color: rgb(231, 241, 250);
-	filter: opacity(0.8);
-
-	font-size: 50px;
-	vertical-align: middle;
-	text-align: left;
-}
 
 #timer-btn-active{
 	/*Positioning*/
@@ -308,38 +282,12 @@ a:hover{
 	height:50px;	
 }
 
-.plants{
-	width: 80px;
-	height:80px;
-	left: 50px;
-	margin-bottom: 90px;
-
-}
-
-#History{
-	/*Positioning*/
-	position: absolute;
-	left:30px;
-	top:290px;
-	overflow: auto;
-}
 
 .summary{
 	position: absolute;
 	
 }
 
-#bkgplant{
-	position: absolute;
-	left:30px;
-	top:290px;	
-	width:80px;
-	height:80px;
-
-	border-radius: 100%;
-	background-color: rgb(231, 241, 250);
-	filter: opacity(0.8);
-}
 
 #hourglass-btn{
 	background-image:url("https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hourglass.png");

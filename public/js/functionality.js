@@ -47,6 +47,21 @@ $(document).ready(function() {
     $(".panel").toggle(4);
     $("#inactivator").hide(1);
   })
+  $(".MyGarden").click(function() {
+    $("#hamWords").toggle(4);
+    $("#cross").hide();
+    $("#hamburger").show();
+    $(".panel").toggle(4);
+    $("#inactivator").hide(1);
+  })
+  $(".Help").click(function() {
+    $("#hamWords").toggle(4);
+    $("#cross").hide();
+    $("#hamburger").show();
+    $(".panel").toggle(4);
+    $("#inactivator").hide(1);
+  })
+
 
   //Toggle hourglass 
   $("#hourglass-alert").hide();
@@ -384,13 +399,21 @@ function startTimer(duration, display) {
 		      timerOn = false;
       
           $(".addToGardenScreen").toggle("fast");
+          
+          //get current date
+          var today = new Date();
+          var dd = String(today.getDate()).padStart(2, '0');
+          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+          var yyyy = today.getFullYear();
 
+          today = yyyy + '/' + mm + '/' + dd;
+          console.log(today);
 
 		      //push plant grown info into json/mygarden page
           $('#plantName').val("Flower");
           $('#plantPic').val("https://pics.clipartpng.com/midle/Tropical_Flower_PNG_Clipart-194.png");
           $('#plantTime').val(text_time);
-          $('#plantDate').val('Today');
+          $('#plantDate').val(today);
 
 		    }
     };
