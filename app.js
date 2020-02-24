@@ -6,7 +6,9 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
+
+var io = require('socket.io');
 
 //var index = require('./routes/index');
 var nurture = require('./routes/nurture');
@@ -17,7 +19,7 @@ var settings = require('./routes/settings');
 
 var login = require('./routes/login');
 
-var help = require('./routes/help');
+var collab = require('./routes/collab');
 
 // Example route
 // var user = require('./routes/user');
@@ -52,21 +54,42 @@ app.get('/logged/home', nurture.user);
 //Second Screen (guest)
 app.get('/guest/home', nurture.guest);
 
-
+//Garden Pages
 app.get('/mygarden', mygarden.view);
 app.get('/logged/home/addPlant', mygarden.addPlant);
 
+//Login pages
 app.get('/')
 app.get('/login', login.view);
-
-app.get('/help', help.view);
 
 
 app.get('/settings/:pageName', settings.view);
 
+//Collaborate (logged in)
+app.get('/logged/collaborate', collab.user);
+//Collaborate (guest)
+app.get('/guest/collaborate', collab.guest);
+
 // Example route
 // app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+});
+
+//Socket.io stuff
+var io = io(server);
+
+io.on('connection', function (socket) {
+  console.log('socket connected');
+  io.emit('connected');
+
+  socket.on('received', function(){
+  	console.log("Connection established!")
+  });
+
+  socket.on('clicked', function(){
+  	io.emit('clicked');
+  });
+
 });
