@@ -26,7 +26,7 @@ body{
 .panel{
 	/*Positioning*/
 	position: absolute;
-	z-index: 1;
+	z-index: 3;
 	width:75%;
 	height:100%;
 	display: block;
@@ -105,7 +105,7 @@ body{
 	position:absolute;
 	left:-31px;
 	top:10px;
-	z-index: 2;
+	z-index: 4;
 
 	/*Size*/
 	height:50px;
