@@ -38,6 +38,17 @@ body{
 
 }
 
+#panel-words{
+	border: 1px solid black;
+	height: ;
+}
+
+.ham-icons{
+	position: absolute;
+    height: 35px;
+    width: 35px;
+}
+
 #inactivator{
 
 	/*Size and position*/
@@ -58,7 +69,7 @@ body{
 	position: absolute;
 	z-index:2;
 	top:100px;
-	left:75px;
+	left:80px;
 
 	/*Size*/
 	height:600px;
@@ -119,11 +130,11 @@ body{
 	background-image: url(https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Ground.png);
 	background-size:100% 250px;
 	background-repeat: no-repeat;
-	background-position: 0px -25px;
+	background-position: 0px 30%;
 
 	/*Positioning*/
 	position: absolute;
-	bottom: -130px;
+	bottom: -17%;
 	height:180px;
 	width:100%;
 
@@ -295,14 +306,14 @@ a:hover{
 
 	/*Positioning*/
 	position:absolute;
-	left:309.5px;
+	right: 4%;
 	top: 565.5px;
 	z-index: 0;
 
 	/*Appearance*/
 	width: 50px;
 	height: 50px;
-	border: 1px solid black;
+	border: 1px solid #ffffff6e;
 	border-radius: 100%;
 
 	z-index: 0;
