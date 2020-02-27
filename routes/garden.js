@@ -11,7 +11,7 @@ exports.view = function(request, response) {
 exports.addPlant = function(request, response) {
 	count++;
 	plantData['count'] = count;
-    plantData.plants.push({"name": request.query.name, "image": request.query.image,
+    plantData.plants.unshift({"name": request.query.name, "image": request.query.image,
     "date": request.query.date, "time": request.query.time})
     response.render('mygarden', plantData);
     console.log(plantData);
