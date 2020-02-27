@@ -1,9 +1,19 @@
+/*
 #plants {
     width: 100px;
     height: 100px;
     margin-bottom: 90px;
     padding: 20px;
     display: inline-block;
+    text-align-last: center;
+}*/
+
+#plants {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 90px;
+    padding: 20px;
+    /* display: -webkit-box; */
     text-align-last: center;
 }
 
@@ -17,18 +27,20 @@
     text-align-last: auto;
 }*/
 
+/*
 #close {
     border: none;
     outline: none;
     height: 40px;
     width: 150;
     background: #55C204;
-    color: #fff font-size: 18px;
+    color: #fff 
+    font-size: 18px;
     border-radius: 20px;
     z-index: 2;
     color: white;
     font-size: 25;
-}
+}*/
 
 #description {
     border: 3px solid green;
@@ -50,23 +62,33 @@
 
 #History {
     width: 375;
-    height: 500;
+    /* height: 500; */
     position: absolute;
     left: 5%;
     top: 35%;
     overflow: auto;
 }
 
+/*
 #text{
     position: absolute;
     left: 24%;
     top: -20%;
     overflow: auto;
     font-size: 20;
+}*/
+
+#text {
+    position: absolute;
+    left: 60%;
+    top: 35%;
+    overflow: auto;
+    font-size: 20;
+    text-align-last: end;
 }
 
 #bkgplant {
-    position: absolute; */
+    position: absolute; 
     /* left: 10%; */
     /* top: 35%; */
     width: 90px;
@@ -76,8 +98,8 @@
     filter: opacity(0.8);
     display: flex;
     /* float: left; */
-    margin-right: px;
     padding: 11px;
+    
     
 }
 
