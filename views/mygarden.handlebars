@@ -22,36 +22,18 @@
 	<script src="/js/jQueryUI.js"></script>
 
 	<script src="/js/functionality.js"></script>
+    <script src="/js/gardenFunctionality.js"></script>
 
 	<!-- Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
-    <script>
-    $(document).ready(function() {
-        initializePage();
-
-        $("#description").hide();
-
-        $("#plantImage" ).click(function() {
-        $("#description" ).toggle();
-
-        });
-
-        $("#close").click(function() {
-            $("#description").hide();
-        });
-    });  
-</script> 
     
 </head>
 <body style="overflow:auto;
 	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
 	background-position: 0px 1000px;
 	background-attachment: fixed;">
-
-    <script>
-        var number = 0;
-    </script>
 
 	<div id="inactivator"></div>
 
@@ -111,118 +93,38 @@
 			</div>
 				
 
-        <!--adding margins - wait do we want this-->
-        <div class="container">
+    <div id=popup>
+        <div id=popPic></div>
+        <div id=popText> Plant Name</div>
+        <button id=popClose> Close</button>
 
-                <div id="MyGardenTitle">
-                    My Garden
-                </div>
+    </div>
 
+    <div id=garden-inactivator></div>
 
-                
-            <!--
-            circle with total in it
-                <div id="total" style = "text-align: center;">
-                    <script>
-                        document.write(number);
-                    </script>
-                </div>-->
+    <div id=MyGardenTitle>
+        My Garden
 
-                <div id="History">
+        <br>
 
-                    
-                    <!--loop through the dataset-->
+        <p id=page-description> Plants grown </p>
 
-                    
-                    {{#each plants}}
-                        <script>
-                            number++;
-                        </script>
-                        <div id="plants">
-                            
-                          <div>
+        <div id=circBG> {{count}} </div>
+    </div>
 
-                                <div id = "bkgplant">
+    <div id=plant-container>
 
-                                    <img src = {{image}} class="img-responsive" id = "plantImage" >
-                                        
-                                </div>
-
-                                <div>
-                                <img src = "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/laurel.png?raw=true" id = "laurel">
-                                </div>
-
-                                
-                                <div id = "description">
-                                    <div id = "text">
-                                        <img src = {{image}} class="img-responsive" id = "smallImg" > 
-                                        <br>
-                                        {{name}}
-                                        <br>
-                                        {{date}}
-                                        <br>         
-                                        {{time}}
-                                        <br>
-                                        <div id = "close">
-                                         close
-                                        </div>
-                                        <br>
-                                    </div>
-
-                                </div>
-
-                                <script>
-                                    $("#description").hide();
-                                </script>
-                          
-                          </div>
-                        </div>
-
-                    
-                    {{/each}}
-
-                    
-
-                   <!--
-                    {{#each plants}}
-                        <div id="garden">
-                            <div>
-                                <script>
-                                    i++;
-                                </script>
-
-                                <img src = {{image}} class = "img-responsive" id = "plantImage"+i>
-                            </div>
-                        </div>
-                    {{/each}}
-
-                </div>
-
-                
-                <div id = "text">
-
-                    {{#each plants}}
-                        <div id = "description">
-                            <br>
-                            {{name}}
-                            <br>
-                            {{date}}
-                            <br>
-                            {{time}}
-
-                        </div>
-                    {{/each}}-->
-                
-                 </div> 
-
-                         <!--circle with total in it-->
-                        <div id="total" style = "text-align: center;">
-                            <script>
-                                document.write(number);
-                            </script>
-                        </div>
-
+        {{#each plants}}
+        <div class=plant id={{@index}}>
+            <img src={{image}} width="105px" height="105px">
+            <p id=image style="display: none;"><img src={{image}} width="105px" height="105px"></p>
+            <p id=name style="display: none;">{{name}}</p>
+            <p id=date style="display: none;">{{date}}</p>
+            <p id=time style="display: none;">{{time}}</p>
         </div>
+        {{/each}}
+        
+    </div>
 
 </body>
 </html>
