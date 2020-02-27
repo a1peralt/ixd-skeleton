@@ -84,12 +84,12 @@ io.on('connection', function (socket) {
   console.log('socket connected');
   io.emit('connected');
 
-  socket.on('received', function(){
-  	console.log("Connection established!")
+  socket.on('focused', function(){
+    io.emit('focused');
   });
 
-  socket.on('clicked', function(){
-  	io.emit('clicked');
+  socket.on('unfocused', function(){
+    io.emit('unfocused');
   });
 
 });

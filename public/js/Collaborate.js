@@ -7,13 +7,24 @@ $(document).ready( function(){
 		socket.emit('received');
 	})
 
-	$('#counts').click( function(){
-		$('#clicked').text('Yes!');
-		socket.emit('clicked');
+	socket.on('focused', function(){
+		$('.test').text("Focused");
 	});
 
-	socket.on('clicked', function(){
-		$('#clicked').text('Yes!');
+	socket.on('unfocused', function(){
+		$('.test').text("Not focused");
 	});
 
+});
+
+
+$(window).focus(function(){
+	var socket = io();
+	socket.emit('focused');
+});
+
+
+$(window).blur(function(){
+	var socket = io();
+	socket.emit('unfocused');
 });
