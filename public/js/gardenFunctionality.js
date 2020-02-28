@@ -94,7 +94,20 @@ function initializePage() {
     $("#popText").text( $("#7 #name").text() + " " + $("#7 #date").text() + " " + $("#7 #time").text());
   });
 
+  $('#8').click(function(){
+    $('#popup').show(toggleSpeed);
+    $('#garden-inactivator').show();
 
+    $('#popPic').html( "<img height=99px width=99px src=" + $("#8 img").attr('src') + ">"  );
+    $("#popText").text( $("#8 #name").text() + " " + $("#8 #date").text() + " " + $("#8 #time").text());
+  });
 
+  $('#9').click(function(){
+    $('#popup').show(toggleSpeed);
+    $('#garden-inactivator').show();
+
+    $('#popPic').html( "<img height=99px width=99px src=" + $("#9 img").attr('src') + ">"  );
+    $("#popText").text( $("#9 #name").text() + " " + $("#9 #date").text() + " " + $("#9 #time").text());
+  });
 
 }

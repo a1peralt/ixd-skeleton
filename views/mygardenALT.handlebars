@@ -22,7 +22,6 @@
 	<script src="/js/jQueryUI.js"></script>
 
 	<script src="/js/functionality.js"></script>
-    <script src="/js/gardenFunctionality.js"></script>
 
 	<!-- Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
@@ -93,34 +92,34 @@
 			</div>
 				
 
-    <div id=popup>
-        <div id=popPic></div>
-        <div id=popText> Plant Name</div>
-        <button id=popClose> Close</button>
+    <div id=blockAlt></div>
 
-    </div>
-
-    <div id=garden-inactivator></div>
-
-    <div id=MyGardenTitle>
+    <div id=MyGardenTitleAlt>
         My Garden
 
         <br>
 
-        <p id=page-description> Plants grown </p>
+        <p id=page-descriptionAlt> Plants grown </p>
 
-        <div id=circBG> {{count}} </div>
+        <div id=circBGAlt> {{count}} </div>
     </div>
 
-    <div id=plant-container>
+
+    <div id=plant-containerAlt>
 
         {{#each plants}}
-        <div class=plant id={{@index}}>
+        {{#if @first}}
+        <div class=timeline style="display: none"></div>
+        {{else}}
+        <div class=timeline></div>
+        {{/if}}
+        <div class=plantAlt id={{@index}}>
             <img src={{image}} width="105px" height="105px">
-            <p id=image style="display: none;"><img src={{image}} width="105px" height="105px"></p>
-            <p id=name style="display: none;">{{name}}</p>
-            <p id=date style="display: none;">{{date}}</p>
-            <p id=time style="display: none;">{{time}}</p>
+            <div class=plantInfoAlt>
+            <p id=name>{{name}}</p>
+            <p id=date>{{date}}</p>
+            <p id=time>{{time}}</p>
+            </div>
         </div>
         {{/each}}
         
