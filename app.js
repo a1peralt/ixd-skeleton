@@ -55,12 +55,12 @@ app.get('/logged/home', nurture.user);
 app.get('/guest/home', nurture.guest);
 
 //Garden Pages
-app.get('/mygarden', mygarden.view);
+app.get('/mygarden/', mygarden.view);
 app.get('/logged/home/addPlant', mygarden.addPlant);
 
-//Alt Garden Pages
-app.get('/mygardenALT', mygarden.viewAlt);
-app.get('/logged/home/addPlantALT', mygarden.addPlantAlt);
+//For A/B testing
+app.get('/mygarden/page_A', mygarden.view);
+app.get('/mygarden/page_B', mygarden.viewAlt);
 
 //Login pages
 app.get('/')
