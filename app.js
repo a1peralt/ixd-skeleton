@@ -58,11 +58,15 @@ app.get('/guest/home', nurture.guest);
 app.get('/mygarden', mygarden.view);
 app.get('/logged/home/addPlant', mygarden.addPlant);
 
+//Alt Garden Pages
+app.get('/mygardenALT', mygarden.viewAlt);
+app.get('/logged/home/addPlantALT', mygarden.addPlantAlt);
+
 //Login pages
 app.get('/')
 app.get('/login', login.view);
 
-
+//Help page
 app.get('/settings/:pageName', settings.view);
 
 //Collaborate (logged in)
