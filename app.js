@@ -55,7 +55,7 @@ app.get('/logged/home', nurture.user);
 app.get('/guest/home', nurture.guest);
 
 //Garden Pages
-app.get('/mygarden/', mygarden.view);
+app.get('/mygarden', mygarden.view);
 app.get('/logged/home/addPlant', mygarden.addPlant);
 
 //For A/B testing
