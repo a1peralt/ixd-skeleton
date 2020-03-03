@@ -1,20 +1,20 @@
 {
     "plants" : [
          {
-            "name" : "Tomato",
-            "image" : "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/Tomato.png?raw=true",
+            "name" : "Sunflower",
+            "image" : "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/plant_stages/default_3.png?raw=true",
             "date" : "Feb 27, 2020",
             "time" : "35 min" 
         },
         {
-            "name" : "Sunflower",
-            "image" : "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/sunflower.png?raw=true",
+            "name" : "Cactus",
+            "image" : "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/plant_stages/cactus_3.png?raw=true",
             "date" : "Feb 05, 2020",
             "time" : "50 min"
         },
         {
-            "name" : "Pine tree",
-            "image" : "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/tree.png?raw=true",
+            "name" : "Rose",
+            "image" : "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/plant_stages/rose_3.png?raw=true",
             "date" : "Jan 20, 2020",
             "time" : "20 min"
         }

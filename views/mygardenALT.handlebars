@@ -29,10 +29,11 @@
 
     
 </head>
-<body style="overflow:auto;
-	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
-	background-position: 0px 1000px;
-	background-attachment: fixed;">
+<body style=
+    "overflow:scroll;
+	background-image: url('https://github.com/a1peralt/ixd-skeleton/blob/master/resources/gradient.jpg?raw=true');
+	background-size: cover;
+	background-repeat: no-repeat;">
 
 	<div id="inactivator"></div>
 
@@ -93,21 +94,16 @@
 			</div>
 				
 
-    <div id=blockAlt></div>
 
-    <div id=MyGardenTitleAlt>
-        My Garden
+    <div id=MyGardenTitle>
+        my garden
 
-        <br>
+        <div id=page-description> plants grown </div>
 
-        <p id=page-descriptionAlt> Plants grown </p>
-
-        <div id=circBGAlt> {{count}} </div>
+        <div id=circBG> {{count}} </div>
     </div>
 
-
-    <div id=plant-containerAlt>
-
+    <div id = plant-containerAlt>
         {{#each plants}}
         {{#if @first}}
         <div class=timeline style="display: none"></div>
@@ -123,8 +119,7 @@
             </div>
         </div>
         {{/each}}
-        
-    </div>
+     </div>  
 
 </body>
 </html>
