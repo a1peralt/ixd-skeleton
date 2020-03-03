@@ -1,0 +1,24 @@
+{
+    "stages" : [
+         {
+            "name" : "Cactus",
+            "1" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/cactus_1.png",
+            "2" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/cactus_2.png",
+            "3" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/cactus_3.png"
+        },
+
+        {
+            "name" : "Sunflower",
+            "1" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/default_1.png",
+            "2" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/default_2.png",
+            "3" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/default_3.png"
+        },
+
+        {
+            "name" : "Rose",
+            "1" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/rose_1.png",
+            "2" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/rose_2.png",
+            "3" : "https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/plant_stages/rose_3.png"
+        }
+    ]
+}

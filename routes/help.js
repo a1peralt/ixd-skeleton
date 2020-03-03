@@ -3,6 +3,10 @@
  * GET help page.
  */
 
-exports.view = function(req, res){
-    res.render('help');
+exports.user = function(req, res){
+    res.render('helpUSER');
   };
+
+exports.guest = function(req, res){
+   res.render('helpGUEST');
+ };

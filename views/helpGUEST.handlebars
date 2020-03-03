@@ -1,4 +1,3 @@
-<!--garden page-->
 <html>
 <head>
     <style>
@@ -26,22 +25,6 @@
 	<!-- Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
 
-    <script>
-    $(document).ready(function() {
-        initializePage();
-
-        $("#description").hide();
-
-        $("#plantImage" ).click(function() {
-        $("#description" ).toggle();
-
-        });
-
-        $("#close").click(function() {
-            $("#description").hide();
-        });
-    });  
-</script> 
     
 </head>
 <body style="overflow:auto;
@@ -49,9 +32,6 @@
 	background-position: 0px 1000px;
 	background-attachment: fixed;">
 
-    <script>
-        var number = 0;
-    </script>
 
 	<div id="inactivator"></div>
 
@@ -66,26 +46,36 @@
 			<div class = "panel">
 
 				<ul id ="hamWords" style="list-style:none; line-height:120px;">
-					<li><a href="/logged/home">Home</a></li>
-					<li><a href="/mygarden">My Garden</a></li> 
-					<li><a href="#">Collaborate</a></li>
-					<li><a class = "Help">Help</a></li>
-					<li><a href="/login">Logout</a></li>
+
+					<li>
+						<a class="Home">
+						<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger_icons/home.png"
+						class='ham-icons' style="left: -25%; top: 7.5%;">
+						Home
+						</a>
+					</li>
+					<!--
+					<li>
+						<a href="/help">
+						<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger_icons/question.png"
+						class='ham-icons' style="left: -25%; top: 27.5%;">
+						Help
+						</a>
+					</li>
+					-->
+					<!--top should be 48-->
+					<li>
+						<a href="/login">
+						<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger_icons/login.png"
+						class='ham-icons' style="left: -22%; top: 28%;">
+						Login
+						</a>
+					</li>
+
+
 				</ul>
 			</div>
 				
-
-        <!--adding margins - wait do we want this-->
-        <div class="container">
-
-                <div id="HelpTitle">
-                    Help
-                </div>
-          
-                    
-
-
-        </div>
 
 </body>
 </html>
