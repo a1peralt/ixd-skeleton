@@ -263,7 +263,7 @@ function initializePage() {
   		}
       	
       $('.ground').addClass('groundslideUP');
-      $('.hands-img').hide('slow');
+      $('.hands-img').animate({top: "52%"}, 550, "linear");
   	});
 
 

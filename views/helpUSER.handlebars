@@ -1,4 +1,3 @@
-<!--garden page-->
 <html>
 <head>
     <style>
@@ -13,7 +12,7 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/Nurture.css" rel="stylesheet">
-    <link href="/css/myGarden.css" rel="stylesheet">
+    <link href="/css/help.css" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
@@ -25,31 +24,18 @@
 
 	<!-- Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-
-    <!-- Google Analytics -->
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-158789537-2', 'auto');
-    ga('require', 'GTM-NMPDCRJ');
-    ga('send', 'pageview');
-    </script>
-    <!-- End Google Analytics -->
 
     
 </head>
 <body style="overflow:auto;
-	background-image: url('https://github.com/a1peralt/ixd-skeleton/blob/master/resources/gradient.jpg?raw=true');
-	background-size: cover;
-	background-repeat: no-repeat;">
+	background-image: url('https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/Sky%20Gradient.png');
+	background-position: 0px 1000px;
+	background-attachment: fixed;">
+
 
 	<div id="inactivator"></div>
 
-			<div id ="hamburger">
+	<div id ="hamburger">
 			<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger.png" height=50px width=50px>
 			</div>
 
@@ -84,6 +70,7 @@
                         Collaborate
                         </a>
                     </li>
+
                     <li>
                         <a href="/help">
                         <img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger_icons/question.png"
@@ -105,44 +92,6 @@
 			</div>
 				
 
-    <div id=blockAlt>
-            <div class = "vine-position">
-        <img src = "https://scontent-lax3-2.xx.fbcdn.net/v/t1.15752-9/88064072_509684653024774_8994897630886625280_n.png?_nc_cat=107&_nc_sid=b96e70&_nc_ohc=sjIqA9n2aCgAX-RGwqo&_nc_ht=scontent-lax3-2.xx&oh=621a3812ccf123dd3b8c94bbd531c0ba&oe=5E97A64F" id = "vine">
-        
-    </div>
-        <div class ="flower-position">
-            <img src = "https://github.com/a1peralt/ixd-skeleton/blob/master/resources/flower.png?raw=true" id = "flower">
-        </div>
-    </div>
-
-    <div id=MyGardenTitleAlt>
-        my garden
-
-        <div id=page-descriptionAlt> plants grown </div>
-
-        <div id=circBGAlt> {{count}} </div>
-    </div>
-
-
-    <div id=plant-containerAlt>
-
-        {{#each plants}}
-        {{#if @first}}
-        <div class=timeline style="display: none"></div>
-        {{else}}
-        <div class=timeline></div>
-        {{/if}}
-        <div class=plantAlt id={{@index}}>
-            <img src={{image}} width="105px" height="105px">
-            <div class=plantInfoAlt>
-            <p id=name>{{name}}</p>
-            <p id=date>{{date}}</p>
-            <p id=time>{{time}}</p>
-            </div>
-        </div>
-        {{/each}}
-        
-    </div>
-
 </body>
 </html>
+

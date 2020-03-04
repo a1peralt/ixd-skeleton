@@ -21,6 +21,8 @@ var login = require('./routes/login');
 
 var collab = require('./routes/collab');
 
+var help = require('./routes/help');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -67,7 +69,8 @@ app.get('/')
 app.get('/login', login.view);
 
 //Help page
-app.get('/settings/:pageName', settings.view);
+app.get('/logged/help', help.user);
+app.get('/guest/help', help.guest);
 
 //Collaborate (logged in)
 app.get('/logged/collaborate', collab.user);
