@@ -6,7 +6,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<title>My Garden</title>
+	<title>Nurture Help</title>
 
     <!--linking js and css-->
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -21,9 +21,11 @@
 	<script src="/js/jQueryUI.js"></script>
 
 	<script src="/js/functionality.js"></script>
+	<script src="/js/helpFunctionality.js"></script>
 
 	<!-- Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
     
 </head>
@@ -37,7 +39,7 @@
 
 	<div id ="hamburger">
 			<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger.png" height=50px width=50px>
-			</div>
+	</div>
 
 			<ul id= "cross">
 				<img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/x.png" height=50px width=50px>
@@ -56,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a class ="myGarden">
+                        <a href ="/mygarden">
                         <img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger_icons/plant.png"
                         class='ham-icons' style="left: -25%; top: 27.5%;">
                         My Garden
@@ -70,27 +72,47 @@
                         Collaborate
                         </a>
                     </li>
-
+					-->
                     <li>
-                        <a href="/help">
+                        <a href="/logged/help">
                         <img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger_icons/question.png"
-                        class='ham-icons' style="left: -25%; top: 67.5%;">
+                        class='ham-icons' style="left: -25%; top: 47.5%;">
                         Help
                         </a>
                     </li>
-                    -->
 
                     <li>
                         <a href="/login">
                         <img src="https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hamburger_icons/logout.png"
-                        class='ham-icons' style="left: -25%; top: 47.5%;">
+                        class='ham-icons' style="left: -25%; top: 67.5%;">
                         Logout
                         </a>
                     </li>
                     
 				</ul>
 			</div>
-				
+
+	<div id="helpTitle"> Help </div>
+
+	<div id="helpContainer">
+		<div class="dropdown" id="nurture"> What is nurture? <span class="triangle"> &#9660; </span> </div>
+		<div class="dropContent" id="nurture-txt"> Nurture is an app meant to keep you accountable as you focus for as long as you choose. Your plants grow as you focus and warn you when you become distracted! </div>
+
+		<div class="dropdown" id="time"> How do I set/start the timer? <span class="triangle"> &#9660; </span> </div>
+		<div class="dropContent" id="time-txt"> Set the timer by using the slider on the right side of the home screen. Start the timer by pressing the "Nurture" button that should appear at the bottom of the screen. </div>
+
+		<div class="dropdown" id="abandon"> What happens if I abandon? <span class="triangle"> &#9660; </span> </div>
+		<div class="dropContent" id="abandon-txt"> If you press "Abandon," you will be prompted to confirm after which the timer will simply reset. The abadoned plant will not be added to your garden. </div>
+
+		<div class="dropdown" id="garden"> What is My Garden? <span class="triangle"> &#9660; </span> </div>
+		<div class="dropContent" id="garden-txt"> "My Garden" is a history of all the plants you have fully nurtured! At the end of your timer, you have the option to add your nurtured plant to your garden. </div>
+
+		<div class="dropdown" id="grow"> Can I change what I grow? <span class="triangle"> &#9660; </span> </div>
+		<div class="dropContent" id="grow-txt"> Yes! Change what plant you nurture by tapping on the seedling before starting the timer on the home screen. </div>
+
+		<div class="dropdown" id="logged"> Do I need to sign in? <span class="triangle"> &#9660; </span> </div>
+		<div class="dropContent" id="log-txt"> Not at all! You can use the app in guest mode. Note that this prevents you from using the "My Garden" function. </div>
+	</div>
 
 </body>
 </html>
