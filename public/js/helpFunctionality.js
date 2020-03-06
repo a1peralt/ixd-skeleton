@@ -60,7 +60,7 @@ function initializePage() {
       on3 = true;
     }
     else{
-      $('#abandon.triangle').css('transform', 'rotate(0deg)');
+      $('#abandon .triangle').css('transform', 'rotate(0deg)');
       on3 = false;
     }
   });
