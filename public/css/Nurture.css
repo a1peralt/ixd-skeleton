@@ -454,3 +454,135 @@ a:hover{
 	background-color: #f44336;
 	color: white;
 }
+
+#plant-selection-screen{
+	background-color: white;
+    border: 3px solid #329616;
+    border-radius: 15px;
+    position: absolute;
+    width: 280px;
+    height: 280px; 
+    color: #000000;
+    text-align: center;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+	font-size: x-large;
+}
+
+.default{
+	width: 80px;
+	height: 80px;
+}
+
+.rose{
+	width: 80px;
+	height: 80px;
+}
+
+.cactus{
+	width: 80px;
+	height: 80px;
+}
+
+.default-planted{
+	/*Positioning*/
+	position: absolute;
+	top: 460px;
+	left: 80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+.rose-planted{
+	/*Positioning*/
+	position: absolute;
+	top:460px;
+	left:80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+.cactus-planted{
+	/*Positioning*/
+	position: absolute;
+	top: 455px;
+	left: 80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+
+.default-2-planted{
+	/*Positioning*/
+	position: absolute;
+	top: 455px;
+	left: 80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+.rose-2-planted{
+	/*Positioning*/
+	position: absolute;
+	top:455px;
+	left:80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+.cactus-2-planted{
+	/*Positioning*/
+	position: absolute;
+	top: 455px;
+	left: 80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+.default-3-planted{
+	/*Positioning*/
+	position: absolute;
+	top: 455px;
+	left: 80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+.rose-3-planted{
+	/*Positioning*/
+	position: absolute;
+	top:455px;
+	left:80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+
+.cactus-3-planted{
+	/*Positioning*/
+	position: absolute;
+	top: 455px;
+	left: 80px;
+
+	width: 200px;
+	height: 200px;
+	display: none;
+}

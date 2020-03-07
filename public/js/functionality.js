@@ -8,6 +8,9 @@ var text_time;
 
 var toggleSpeed = 100;
 
+var halfPoint;
+var userSelection;
+
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -61,7 +64,6 @@ $(document).ready(function() {
     $("#inactivator").hide(1);
   })
 
-
   //Toggle hourglass 
   $("#hourglass-alert").hide();
 
@@ -83,11 +85,50 @@ $(document).ready(function() {
     $("#inactivator").hide(1);
   });
 
-  
   //confirmation screen
   $('#no-btn').click(function() {
     $("#confirmation-screen").hide();
   });
+
+  //Toggle plant selection screen
+  $("#plant-selection-screen").hide();
+
+  $(".hands-img").click(function() {
+    $("#plant-selection-screen").toggle(1);
+    $("#inactivator").show();
+  });
+
+  //Sunflower Route
+  $(".default").click(function(){
+    $("#plant-selection-screen").hide();
+    $(".hands-img").hide();
+    $(".default-planted").show();
+    $("#inactivator").hide();
+    userSelection = 1;
+  });
+
+  //Rose Route
+  $(".rose").click(function(){
+    $("#plant-selection-screen").hide();
+    $(".hands-img").hide();
+    $(".rose-planted").show();
+    $("#inactivator").hide();
+    userSelection = 2;
+  });
+
+  //Cactus Route
+  $(".cactus").click(function(){
+    $("#plant-selection-screen").hide();
+    $(".hands-img").hide();
+    $(".cactus-planted").show();
+    $("#inactivator").hide();
+    userSelection = 3;
+  });
+
+  //Default Route
+  if(userSelection != 1,2,3){
+    userSelection = 1;
+  }
 
 });
 
@@ -134,7 +175,7 @@ function initializePage() {
   				$('#min-indicator').text('10min');
   			}
   			if(mins < 480 && mins > 460){
-				  userTime = 10*60;
+				  userTime = 15*60;
 				  text_time = "15 min";
   				$('#min-indicator').text('15min');
   			}
@@ -293,12 +334,23 @@ function initializePage() {
 
   			//Change words on button
   			$('#nurture-btn').html("Abandon <img src=\"https://github.com/a1peralt/ixd-skeleton/blob/master/resources/broken-heart-color.png?raw=true\" class=\"broken-heart\" />  ");
-  			//show the planted plant image
-  			$('.planted').show();
-  			//hide the hand plant
-  			$('.hands-img').hide();
 
         timerOn = true;
+
+        if (userSelection == 1){
+          $('.default-planted').show();
+        }
+
+        if (userSelection == 2){
+          $('.rose-planted').show();
+        }
+
+        if (userSelection == 3){
+          $('.cactus-planted').show();
+        }
+
+  			//hide the hand plant
+  			$('.hands-img').hide();
 
 		  }
 
@@ -334,7 +386,19 @@ function initializePage() {
         $('#banner').html('Set how long you\'d like to nurture');
 
         //Reset pics
-        $('.planted').hide();
+        $('.default-planted').hide();
+        $('.default-2-planted').hide();
+        $('.default-3-planted').hide();
+        $('.rose-planted').hide();
+        $('.rose-2-planted').hide();
+        $('.rose-3-planted').hide();
+        $('.cactus-planted').hide();
+        $('.cactus-2-planted').hide();
+        $('.cactus-3-planted').hide();
+        $(".hands-img").show();
+
+        //Reset user selection
+        userSelection = 1;
 
       });
 
@@ -360,6 +424,10 @@ function startTimer(duration, display) {
         minutes,
         seconds;
 
+        halfPoint = (duration - (((Date.now() - start) / 1000) | 0)) / 2;
+        halfPoint = parseInt(halfPoint, 10);
+    
+
     function timer() {
         //Get correct time
         diff = duration - (((Date.now() - start) / 1000) | 0);
@@ -379,8 +447,43 @@ function startTimer(duration, display) {
             start = Date.now() + 1000;
         }
 
+        //Timer Halfway Behavior
+        if(diff == halfPoint) {
+
+          if(userSelection == 1){
+            $(".default-planted").hide();
+            $(".default-2-planted").show();
+          }
+
+          if(userSelection == 2){  
+            $(".rose-planted").hide();
+            $(".rose-2-planted").show();
+          }
+
+          if(userSelection == 3){  
+            $(".cactus-planted").hide();
+            $(".cactus-2-planted").show();
+          }
+        }
+
         //Timer End behavior
         if(minutes == 0 && seconds == 0){
+
+          if(userSelection == 1){
+            $(".default-2-planted").hide();
+            $(".default-3-planted").show();
+          }
+
+          if(userSelection == 2){
+            $(".rose-2-planted").hide();  
+            $(".rose-3-planted").show();
+          }
+
+          if(userSelection == 3){  
+            $(".cactus-2-planted").hide();
+            $(".cactus-3-planted").show();
+
+          }
 
           //Stop Timer
           clearInterval(time);
@@ -421,12 +524,39 @@ function startTimer(duration, display) {
             $('#banner').css('fontSize','65px');
             $('#banner').html('Nurture Again!');
 
+            //Reset user selection
+            $('.default-planted').hide();
+            $('.default-2-planted').hide();
+            $('.default-3-planted').hide();
+            $('.rose-planted').hide();
+            $('.rose-2-planted').hide();
+            $('.rose-3-planted').hide();
+            $('.cactus-planted').hide();
+            $('.cactus-2-planted').hide();
+            $('.cactus-3-planted').hide();
+            $(".hands-img").show();
+
           });
 
 
 		      //push plant grown info into json/mygarden page
           $('#plantName').val("Flower");
           $('#plantPic').val("https://pics.clipartpng.com/midle/Tropical_Flower_PNG_Clipart-194.png");
+
+          if (userSelection == 1){
+            $('#plantName').val("Sunflower");
+            $('#plantPic').val("https://github.com/a1peralt/ixd-skeleton/blob/master/resources/plant_stages/default_3.png?raw=true");
+          }
+
+          if (userSelection == 2){
+            $('#plantName').val("Rose");
+            $('#plantPic').val("https://github.com/a1peralt/ixd-skeleton/blob/master/resources/plant_stages/rose_2.png?raw=true");
+          }
+
+          if (userSelection == 3){
+            $('#plantName').val("Cactus");
+            $('#plantPic').val("https://github.com/a1peralt/ixd-skeleton/blob/master/resources/plant_stages/cactus_3.png?raw=true");
+          }
           $('#plantTime').val(text_time);
           $('#plantDate').val(today);
 
