@@ -13,7 +13,7 @@ exports.addPlant = function(request, response) {
 	plantData['count'] = count;
     plantData.plants.unshift({"name": request.query.name, "image": request.query.image,
     "date": request.query.date, "time": request.query.time})
-    response.render('mygarden', plantData);
+    response.render('mygardenALT', plantData);
     console.log(plantData);
 }
 
