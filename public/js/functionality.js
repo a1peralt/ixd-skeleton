@@ -9,6 +9,7 @@ var text_time;
 var toggleSpeed = 100;
 
 var halfPoint;
+var quarterPoint;
 var userSelection;
 
 
@@ -72,7 +73,7 @@ $(document).ready(function() {
       $("#hourglass-alert").show(1);
       setTimeout(function() {
         $('#hourglass-alert').hide(1);
-      }, 3000);
+      }, 5000);
     }
   });
 
@@ -96,6 +97,12 @@ $(document).ready(function() {
   $(".hands-img").click(function() {
     $("#plant-selection-screen").toggle(1);
     $("#inactivator").show();
+  });
+
+  //Close plant selection screen 
+  $('#close-btn').click(function(){
+    $("#plant-selection-screen").hide();
+    $("#inactivator").hide();
   });
 
   //Sunflower Route
@@ -426,7 +433,9 @@ function startTimer(duration, display) {
 
         halfPoint = (duration - (((Date.now() - start) / 1000) | 0)) / 2;
         halfPoint = parseInt(halfPoint, 10);
-    
+
+        quarterPoint = (duration - (((Date.now() - start) / 1000) | 0)) / 4;
+        quarterPoint = parseInt(quarterPoint, 10);
 
     function timer() {
         //Get correct time
@@ -466,8 +475,8 @@ function startTimer(duration, display) {
           }
         }
 
-        //Timer End behavior
-        if(minutes == 0 && seconds == 0){
+        //Timer Quarter-way Behavior
+        if(diff == quarterPoint){
 
           if(userSelection == 1){
             $(".default-2-planted").hide();
@@ -484,6 +493,10 @@ function startTimer(duration, display) {
             $(".cactus-3-planted").show();
 
           }
+        }
+
+        //Timer End behavior
+        if(minutes == 0 && seconds == 0){
 
           //Stop Timer
           clearInterval(time);

@@ -300,7 +300,8 @@ a:hover{
 
 
 #hourglass-btn{
-	background-image:url("https://raw.githubusercontent.com/a1peralt/ixd-skeleton/master/resources/hourglass.png");
+	background-color: transparent;
+	background-image:url("https://github.com/a1peralt/ixd-skeleton/blob/master/resources/question.png?raw=true");
 	background-size:cover;
 
 	/*Positioning*/
@@ -312,22 +313,43 @@ a:hover{
 	/*Appearance*/
 	width: 50px;
 	height: 50px;
-	border: 1px solid #ffffff6e;
+	border: 1px solid white;
 	border-radius: 100%;
-
 	z-index: 0;
 }
 
 #hourglass-alert{
-	width: 120px;
-	line-height: 20px;
+	background-color: transparent;
 	position: absolute;
+	left: 145px;
+	top: 465px;
+	height: 160px;
+	width: 150px;
 	font-size: 18px;
-	vertical-align: middle;
-	text-align: left;
-	left:185px;
-	top:555px;
-	color:white;
+	line-height: 20px;
+	color: white;
+	z-index: 1;
+	
+}
+
+#peak{
+	color: #2E761D;
+	position: absolute;
+	right: -9%;
+	bottom: 15%;
+	z-index: 1;
+}
+
+#textbox{
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
+	background-color: #2E761D;
+	position: absolute;
+	height: 150px;
+	width: 150px;
+	padding: 10px;
+	border-radius: 15px;
+	z-index: 0;
 }
 
 #userInputScreen{
@@ -461,14 +483,14 @@ a:hover{
     border-radius: 15px;
     position: absolute;
     width: 280px;
-    height: 280px; 
+    height: 290px; 
     color: #000000;
     text-align: center;
     padding: 10px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    z-index: 3;
+    z-index: 2;
 	font-size: x-large;
 }
 
@@ -585,4 +607,14 @@ a:hover{
 	width: 200px;
 	height: 200px;
 	display: none;
+}
+
+#close-btn{
+	margin-top: 6%;
+	padding: 12px 24px;
+	font-size: 22px;
+	background-color: white;
+	color: #f44336;
+	border: 2px solid #f44336;
+	border-radius: 12px;
 }
